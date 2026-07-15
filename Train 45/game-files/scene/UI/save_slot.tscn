@@ -1,0 +1,425 @@
+[gd_scene load_steps=16 format=3 uid="uid://cmeyvp67l4r3a"]
+
+[ext_resource type="Script" uid="uid://cadr8byhqk35i" path="res://scene/UI/save_slot.gd" id="1_n7wb8"]
+[ext_resource type="Theme" uid="uid://btscey36vk310" path="res://resources/ui/SaveMenu/save_theme.tres" id="1_t3krr"]
+[ext_resource type="Texture2D" uid="uid://c4juqogxfhshe" path="res://resources/ui/SaveMenu/num_box.png" id="2_p6a5p"]
+[ext_resource type="PackedScene" uid="uid://rye76hy4dovq" path="res://scene/UI/confirm_box.tscn" id="2_r8fy3"]
+[ext_resource type="Texture2D" uid="uid://b8up2mmmyqxn3" path="res://resources/ui/SaveMenu/num_select_box.png" id="3_2vhss"]
+[ext_resource type="PackedScene" uid="uid://c2ma7qasrwtka" path="res://Gameplay/Sound/random_stream_player_global.tscn" id="3_3c1e4"]
+[ext_resource type="AudioStream" uid="uid://bvce88iu84vg0" path="res://sound/sfx/ui/save_menu_button_focus1.wav" id="4_ndpnp"]
+[ext_resource type="AudioStream" uid="uid://ck4fwdibpi208" path="res://sound/sfx/ui/save_menu_button_focus2.wav" id="5_soxd1"]
+[ext_resource type="AudioStream" uid="uid://c6sj685mgivil" path="res://sound/sfx/ui/save_menu_button_focus3.wav" id="6_0mofx"]
+[ext_resource type="AudioStream" uid="uid://buwfix3qpjo8e" path="res://sound/sfx/ui/save_menu_button_focus4.wav" id="7_wtbyn"]
+
+[sub_resource type="Animation" id="Animation_efdv6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NumBox:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NumBox/Count:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.188235, 0.180392, 0.152941, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SelectRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SaveInfo/ChapterTitle:theme_override_colors/font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.898039, 0.85098, 0.835294, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SaveInfo/SaveTime:theme_override_colors/font_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.898039, 0.85098, 0.835294, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SaveInfo/SaveDate:theme_override_colors/font_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.898039, 0.85098, 0.835294, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("NumBox/Count:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 4)]
+}
+
+[sub_resource type="Animation" id="Animation_wgsnq"]
+resource_name = "select"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NumBox:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0784314, 0.0901961, 0.0941176, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SelectRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NumBox/Count:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SaveInfo/ChapterTitle:theme_override_colors/font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SaveInfo/SaveTime:theme_override_colors/font_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SaveInfo/SaveDate:theme_override_colors/font_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("NumBox/Count:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jm761"]
+_data = {
+&"RESET": SubResource("Animation_efdv6"),
+&"select": SubResource("Animation_wgsnq")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_3c1e4"]
+font_size = 7
+font_color = Color(0.9, 0.7317, 0.306, 1)
+outline_size = 4
+outline_color = Color(0.0235294, 0.0431373, 0.0470588, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0pvox"]
+font_color = Color(0.894118, 0.854902, 0.839216, 1)
+
+[node name="SaveSlot" type="Button" node_paths=PackedStringArray("save_info_node")]
+custom_minimum_size = Vector2(200, 50)
+anchors_preset = -1
+anchor_left = 0.322
+anchor_top = 0.069
+anchor_right = 0.322
+anchor_bottom = 0.069
+offset_left = -206.08
+offset_top = -24.84
+offset_right = -6.08
+offset_bottom = 25.16
+pivot_offset = Vector2(200, 25)
+size_flags_horizontal = 0
+mouse_filter = 1
+theme = ExtResource("1_t3krr")
+toggle_mode = true
+script = ExtResource("1_n7wb8")
+save_info_node = NodePath("SaveInfo")
+
+[node name="RandomStreamPlayerGlobalComponent" parent="." instance=ExtResource("3_3c1e4")]
+streams = Array[AudioStream]([ExtResource("4_ndpnp"), ExtResource("5_soxd1"), ExtResource("6_0mofx"), ExtResource("7_wtbyn")])
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jm761")
+}
+
+[node name="SelectRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -27.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.795, 0.795)
+pivot_offset = Vector2(244, 26)
+texture = ExtResource("3_2vhss")
+expand_mode = 2
+
+[node name="NumBox" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -18.0
+offset_right = -8.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(30, 15)
+texture = ExtResource("2_p6a5p")
+expand_mode = 1
+
+[node name="Count" type="Label" parent="NumBox"]
+unique_name_in_owner = true
+self_modulate = Color(0.188235, 0.180392, 0.152941, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.067
+anchor_top = 0.1
+anchor_right = 0.933
+anchor_bottom = 0.9
+offset_left = -0.00999999
+offset_top = 1.0
+offset_right = 0.0099983215
+offset_bottom = 0.9999981
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SaveInfo" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -3.0
+offset_right = -98.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.28, 1.28)
+mouse_filter = 2
+
+[node name="ChapterTitle" type="Label" parent="SaveInfo"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -73.0
+offset_right = -10.0
+offset_bottom = 32.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.898039, 0.85098, 0.835294, 1)
+text = "体験版"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ClearLable" type="Label" parent="SaveInfo"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -147.969
+offset_top = 25.0
+offset_right = -81.9682
+offset_bottom = 39.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.898039, 0.85098, 0.835294, 1)
+theme_override_font_sizes/font_size = 21
+text = "Clear"
+label_settings = SubResource("LabelSettings_3c1e4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SaveTime" type="Label" parent="SaveInfo"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -101.0
+offset_top = 24.2308
+offset_right = -10.0
+offset_bottom = 48.2308
+grow_horizontal = 0
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.898039, 0.85098, 0.835294, 1)
+theme_override_font_sizes/font_size = 9
+text = "99:99"
+horizontal_alignment = 2
+
+[node name="SaveDate" type="Label" parent="SaveInfo"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.844
+offset_top = 24.2187
+offset_right = -37.8438
+offset_bottom = 38.2187
+grow_horizontal = 0
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.898039, 0.85098, 0.835294, 1)
+theme_override_font_sizes/font_size = 9
+text = "2099/99/99"
+horizontal_alignment = 2
+
+[node name="PlayTime" type="Label" parent="SaveInfo"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -24.0
+offset_right = 96.0
+grow_vertical = 0
+size_flags_horizontal = 0
+text = "99:99:99"
+
+[node name="SaveConfirm" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 7.27273
+offset_top = -11.3636
+offset_right = 109.273
+offset_bottom = 12.6364
+scale = Vector2(0.655, 0.655)
+theme = ExtResource("1_t3krr")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "SAVE_GAME"
+label_settings = SubResource("LabelSettings_0pvox")
+vertical_alignment = 1
+
+[node name="ConfirmBox" parent="." instance=ExtResource("2_r8fy3")]
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="toggled" from="." to="." method="_on_toggled"]

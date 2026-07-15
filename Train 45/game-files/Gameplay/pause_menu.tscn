@@ -1,0 +1,665 @@
+[gd_scene load_steps=32 format=3 uid="uid://coxtngf0s1c6j"]
+
+[ext_resource type="Script" uid="uid://cos321ui485qq" path="res://Gameplay/pause_menu.gd" id="1_8db7k"]
+[ext_resource type="PackedScene" uid="uid://bxe7ke7bkgu2r" path="res://Gameplay/options_menu.tscn" id="2_wrxuq"]
+[ext_resource type="PackedScene" uid="uid://bkgp65imvcd0s" path="res://Gameplay/load_menu.tscn" id="3_qv2oa"]
+[ext_resource type="Texture2D" uid="uid://cvpb5tivbriyd" path="res://resources/ui/PauseMenu/pause_back.png" id="4_3okb8"]
+[ext_resource type="PackedScene" uid="uid://c2ma7qasrwtka" path="res://Gameplay/Sound/random_stream_player_global.tscn" id="4_4e14b"]
+[ext_resource type="PackedScene" uid="uid://bvddyffn8losd" path="res://scene/blur_bg.tscn" id="4_37fcp"]
+[ext_resource type="PackedScene" uid="uid://dfoj8l3p6ssk5" path="res://Gameplay/Sound/ui_sound_stream_player.tscn" id="4_agder"]
+[ext_resource type="PackedScene" uid="uid://c4tr1lhqif534" path="res://Gameplay/Ui/TutorialBook/tutorial_book.tscn" id="4_bwyib"]
+[ext_resource type="PackedScene" uid="uid://rye76hy4dovq" path="res://scene/UI/confirm_box.tscn" id="4_othj8"]
+[ext_resource type="Texture2D" uid="uid://gq8jvytq8fev" path="res://resources/ui/PauseMenu/pause_box.png" id="5_3fgga"]
+[ext_resource type="AudioStream" uid="uid://1rppdvq8ivu8" path="res://sound/sfx/ui/paper_move.wav" id="5_agder"]
+[ext_resource type="Texture2D" uid="uid://bgwulps41itw" path="res://resources/ui/PauseMenu/pause_front.png" id="6_2aw8x"]
+[ext_resource type="Theme" uid="uid://cd3b0shenebsc" path="res://resources/ui/PauseMenu/pause_menu.tres" id="6_7wop1"]
+[ext_resource type="Script" uid="uid://cn7jhefucm0q" path="res://Gameplay/PauseBox.gd" id="7_788p3"]
+[ext_resource type="Script" uid="uid://w286c8i2c607" path="res://Gameplay/AnimationComponent.gd" id="8_lu18x"]
+[ext_resource type="Texture2D" uid="uid://dd3w24f8qxtc3" path="res://resources/ui/gui/quest_box.png" id="12_as8bb"]
+[ext_resource type="Theme" uid="uid://bo7v8g7wxf6f3" path="res://resources/Dialogic_Style/CenteredChoices/train_dia_button.tres" id="14_4e14b"]
+[ext_resource type="PackedScene" uid="uid://c7tthty2e1w31" path="res://Gameplay/Ui/auto_shirink_component.tscn" id="14_r63rg"]
+[ext_resource type="Texture2D" uid="uid://b85j0etrijnp1" path="res://resources/ui/PauseMenu/note_paper.png" id="16_bwyib"]
+[ext_resource type="Script" uid="uid://2r0mmo77q7ib" path="res://Gameplay/Ui/note_paper.gd" id="17_4uohf"]
+[ext_resource type="Texture2D" uid="uid://dfwm6piy1cnk3" path="res://resources/ui/controller_icons/xbox-Y.png" id="19_1ovms"]
+[ext_resource type="Script" uid="uid://nnjff5ms5xn6" path="res://scene/component/controller_button_component.gd" id="20_krpq3"]
+[ext_resource type="Script" uid="uid://bdxbtw4laj61s" path="res://scene/component/kb_ui_label.gd" id="21_kbbadge"]
+
+[sub_resource type="Animation" id="Animation_74p5q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 360)]
+}
+
+[sub_resource type="Animation" id="Animation_ahski"]
+resource_name = "in"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-200, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [-0.507891, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dxpyq"]
+resource_name = "out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00204276, 0.3),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-200, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.00204276, 0.3),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [0.0, -0.507891]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iu32w"]
+_data = {
+&"RESET": SubResource("Animation_74p5q"),
+&"in": SubResource("Animation_ahski"),
+&"out": SubResource("Animation_dxpyq")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_4uohf"]
+font_size = 50
+font_color = Color(0.116741, 0.116741, 0.116741, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_radrx"]
+font_size = 25
+font_color = Color(0.116741, 0.116741, 0.116741, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r63rg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5w78d"]
+font_size = 11
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.428)
+shadow_offset = Vector2(0, 1)
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8db7k")
+option_menu = ExtResource("2_wrxuq")
+save_load_menu = ExtResource("3_qv2oa")
+help_book = ExtResource("4_bwyib")
+
+[node name="PauseMenuStreamPlayer" parent="." instance=ExtResource("4_agder")]
+
+[node name="RandomStreamPlayerGlobalComponent" parent="." instance=ExtResource("4_4e14b")]
+streams = Array[AudioStream]([ExtResource("5_agder")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="ScreenBlurRect" parent="CanvasLayer" instance=ExtResource("4_37fcp")]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+process_mode = 3
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(640, 360)
+offset_right = 640.0
+offset_bottom = 360.0
+pivot_offset = Vector2(320, 180)
+size_flags_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 28.0
+offset_right = 224.0
+offset_bottom = 893.0
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("4_3okb8")
+
+[node name="ResumeBox" type="TextureRect" parent="CanvasLayer/Panel"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 70.0
+offset_top = -126.0
+offset_right = 200.0
+offset_bottom = -53.0
+grow_vertical = 2
+rotation = -0.105084
+pivot_offset = Vector2(0, 36)
+size_flags_horizontal = 0
+texture = ExtResource("5_3fgga")
+expand_mode = 1
+
+[node name="Resume" type="Button" parent="CanvasLayer/Panel/ResumeBox"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.9739
+offset_top = -19.0261
+offset_right = 50.0261
+offset_bottom = 12.9739
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_7wop1")
+text = "PAUSE_RESUME"
+clip_text = true
+script = ExtResource("7_788p3")
+
+[node name="AutoShirinkComponent" parent="CanvasLayer/Panel/ResumeBox/Resume" instance=ExtResource("14_r63rg")]
+max_font_size = 21
+min_font_size = 12
+
+[node name="AnimationComponent" type="Node" parent="CanvasLayer/Panel/ResumeBox/Resume" node_paths=PackedStringArray("sound_player")]
+process_mode = 3
+script = ExtResource("8_lu18x")
+from_center = false
+hover_scale = Vector2(1.2, 1.2)
+time = 0.3
+transition_type = 8
+sound_player = NodePath("../../../../../RandomStreamPlayerGlobalComponent")
+
+[node name="SaveBox" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 68.0
+offset_top = -73.0
+offset_right = 198.0
+grow_vertical = 2
+rotation = 0.0694452
+pivot_offset = Vector2(0, 36)
+size_flags_horizontal = 0
+texture = ExtResource("5_3fgga")
+expand_mode = 1
+
+[node name="Save" type="Button" parent="CanvasLayer/Panel/SaveBox"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -16.0
+offset_right = 50.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_7wop1")
+text = "SAVE_GAME"
+clip_text = true
+script = ExtResource("7_788p3")
+
+[node name="AutoShirinkComponent" parent="CanvasLayer/Panel/SaveBox/Save" instance=ExtResource("14_r63rg")]
+max_font_size = 21
+min_font_size = 12
+
+[node name="AnimationComponent" type="Node" parent="CanvasLayer/Panel/SaveBox/Save" node_paths=PackedStringArray("sound_player")]
+process_mode = 3
+script = ExtResource("8_lu18x")
+from_center = false
+hover_scale = Vector2(1.2, 1.2)
+time = 0.3
+transition_type = 8
+sound_player = NodePath("../../../../../RandomStreamPlayerGlobalComponent")
+
+[node name="LoadBox" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 59.0
+offset_top = -21.0
+offset_right = 189.0
+offset_bottom = 52.0
+grow_vertical = 2
+rotation = 0.166303
+pivot_offset = Vector2(0, 36)
+size_flags_horizontal = 0
+texture = ExtResource("5_3fgga")
+expand_mode = 1
+
+[node name="Load" type="Button" parent="CanvasLayer/Panel/LoadBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -16.0
+offset_right = 50.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_7wop1")
+text = "LOAD_GAME"
+clip_text = true
+script = ExtResource("7_788p3")
+
+[node name="AutoShirinkComponent" parent="CanvasLayer/Panel/LoadBox/Load" instance=ExtResource("14_r63rg")]
+max_font_size = 21
+min_font_size = 12
+
+[node name="AnimationComponent" type="Node" parent="CanvasLayer/Panel/LoadBox/Load" node_paths=PackedStringArray("sound_player")]
+script = ExtResource("8_lu18x")
+from_center = false
+hover_scale = Vector2(1.2, 1.2)
+time = 0.3
+transition_type = 8
+sound_player = NodePath("../../../../../RandomStreamPlayerGlobalComponent")
+
+[node name="OptionBox" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 58.0
+offset_top = 44.0
+offset_right = 188.0
+offset_bottom = 117.0
+grow_vertical = 2
+rotation = 0.0286131
+pivot_offset = Vector2(0, 36)
+size_flags_horizontal = 0
+texture = ExtResource("5_3fgga")
+expand_mode = 1
+
+[node name="Option" type="Button" parent="CanvasLayer/Panel/OptionBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0554
+offset_top = -17.9347
+offset_right = 49.9446
+offset_bottom = 14.0653
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_7wop1")
+text = "PAUSE_OPTION"
+clip_text = true
+script = ExtResource("7_788p3")
+
+[node name="AutoShirinkComponent" parent="CanvasLayer/Panel/OptionBox/Option" instance=ExtResource("14_r63rg")]
+max_font_size = 21
+min_font_size = 12
+
+[node name="AnimationComponent" type="Node" parent="CanvasLayer/Panel/OptionBox/Option" node_paths=PackedStringArray("sound_player")]
+script = ExtResource("8_lu18x")
+from_center = false
+hover_scale = Vector2(1.2, 1.2)
+time = 0.3
+transition_type = 8
+sound_player = NodePath("../../../../../RandomStreamPlayerGlobalComponent")
+
+[node name="MainExitBox" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 51.0
+offset_top = 92.0
+offset_right = 181.0
+offset_bottom = 165.0
+grow_vertical = 2
+rotation = 0.222474
+pivot_offset = Vector2(0, 36)
+size_flags_horizontal = 0
+texture = ExtResource("5_3fgga")
+expand_mode = 1
+
+[node name="MainExit" type="Button" parent="CanvasLayer/Panel/MainExitBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.6054
+offset_top = -17.778
+offset_right = 53.3946
+offset_bottom = 14.222
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_7wop1")
+text = "PAUSE_MAIN_EXIT"
+clip_text = true
+script = ExtResource("7_788p3")
+
+[node name="AnimationComponent" type="Node" parent="CanvasLayer/Panel/MainExitBox/MainExit" node_paths=PackedStringArray("sound_player")]
+script = ExtResource("8_lu18x")
+from_center = false
+hover_scale = Vector2(1.2, 1.2)
+time = 0.3
+transition_type = 8
+sound_player = NodePath("../../../../../RandomStreamPlayerGlobalComponent")
+
+[node name="AutoShirinkComponent" parent="CanvasLayer/Panel/MainExitBox/MainExit" instance=ExtResource("14_r63rg")]
+max_font_size = 21
+min_font_size = 12
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Panel"]
+z_index = 2
+layout_mode = 0
+offset_right = 274.0
+offset_bottom = 1001.0
+scale = Vector2(0.36, 0.36)
+mouse_filter = 2
+texture = ExtResource("6_2aw8x")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Panel"]
+libraries = {
+&"": SubResource("AnimationLibrary_iu32w")
+}
+
+[node name="HelpButton" type="Button" parent="CanvasLayer/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 550.0
+offset_top = 274.0
+offset_right = 617.0
+offset_bottom = 341.0
+theme = ExtResource("14_4e14b")
+theme_override_font_sizes/font_size = 16
+text = "HELP"
+
+[node name="NotePaper" type="TextureRect" parent="CanvasLayer" node_paths=PackedStringArray("pause_menu")]
+offset_left = 490.0
+offset_top = 50.0
+offset_right = 1348.0
+offset_bottom = 783.0
+scale = Vector2(0.261937, 0.261937)
+texture = ExtResource("16_bwyib")
+script = ExtResource("17_4uohf")
+pause_menu = NodePath("../..")
+
+[node name="Label" type="Label" parent="CanvasLayer/NotePaper"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -8.0
+offset_top = 4.0
+offset_right = 191.0
+offset_bottom = 77.0
+grow_horizontal = 2
+text = "NOTE"
+label_settings = SubResource("LabelSettings_4uohf")
+horizontal_alignment = 1
+
+[node name="AutoShirinkComponent" parent="CanvasLayer/NotePaper/Label" instance=ExtResource("14_r63rg")]
+max_font_size = 50
+min_font_size = 28
+
+[node name="Label2" type="Label" parent="CanvasLayer/NotePaper"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -173.21332
+offset_top = 4.0
+offset_right = -19.109314
+offset_bottom = 77.0
+grow_horizontal = 2
+text = "(Shift)"
+label_settings = SubResource("LabelSettings_radrx")
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("21_kbbadge")
+
+[node name="PadUiIcon" type="TextureRect" parent="CanvasLayer/NotePaper/Label2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -47.20816
+offset_top = -21.453125
+offset_right = -4.3019104
+offset_bottom = 21.453125
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("19_1ovms")
+script = ExtResource("20_krpq3")
+metadata/_custom_type_script = "uid://nnjff5ms5xn6"
+
+[node name="NoteText" type="TextEdit" parent="CanvasLayer/NotePaper"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -286.5
+offset_right = 121.0
+offset_bottom = 316.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.505435, 0.432492, 0.227689, 0.47451)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r63rg")
+placeholder_text = "NOTE_PLACEHOLDER"
+context_menu_enabled = false
+wrap_mode = 1
+
+[node name="QuestRect" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(1, 1, 1, 0.648)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -227.0
+offset_top = 9.0
+offset_right = 6.0
+offset_bottom = 29.0
+grow_horizontal = 0
+texture = ExtResource("12_as8bb")
+expand_mode = 1
+
+[node name="QuestLabel" type="Label" parent="CanvasLayer/QuestRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.977
+anchor_top = 0.5
+anchor_right = 0.977
+anchor_bottom = 0.5
+offset_left = -114.031
+offset_top = -12.0
+offset_right = -13.031
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "QUESTTEXT"
+label_settings = SubResource("LabelSettings_5w78d")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ConfirmBox" parent="." instance=ExtResource("4_othj8")]
+
+[connection signal="pressed" from="CanvasLayer/Panel/ResumeBox/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/SaveBox/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/LoadBox/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/OptionBox/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/MainExitBox/MainExit" to="." method="_on_main_exit_pressed"]

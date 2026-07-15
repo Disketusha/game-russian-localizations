@@ -1,0 +1,802 @@
+[gd_scene load_steps=111 format=3]
+
+[ext_resource type="Script" uid="uid://c12lncksvrqkc" path="res://scene/component/free_action_component.gd" id="1_03acr"]
+[ext_resource type="Script" uid="uid://cjwbey4rrgl1s" path="res://scene/component/ActionUI.gd" id="2_fa4vs"]
+[ext_resource type="Texture2D" uid="uid://cccsn126gjbbt" path="res://resources/ui/FreeAction/button_pause.png" id="3_dyiuj"]
+[ext_resource type="Texture2D" uid="uid://ce0b6ldbhmx5w" path="res://resources/ui/FreeAction/button_pause_active.png" id="4_1k5uq"]
+[ext_resource type="Script" uid="uid://bplbr3ljkluch" path="res://scene/component/button_set_anim_component.gd" id="5_cisj0"]
+[ext_resource type="Texture2D" uid="uid://dc2awj4s8ipab" path="res://resources/ui/FreeAction/button_play.png" id="6_i8khw"]
+[ext_resource type="Texture2D" uid="uid://bmatixrb0fyng" path="res://resources/ui/FreeAction/button_play_active.png" id="7_tgbsp"]
+[ext_resource type="Texture2D" uid="uid://cscwcciipr3ak" path="res://resources/ui/FreeAction/button_double.png" id="8_vc7yx"]
+[ext_resource type="Texture2D" uid="uid://ukmqswblt2qe" path="res://resources/ui/FreeAction/button_double_active.png" id="9_cxs4i"]
+[ext_resource type="Texture2D" uid="uid://dvb657jbn3ejl" path="res://resources/ui/controller_icons/xbox-start-16.png" id="12_6uqe7"]
+[ext_resource type="Texture2D" uid="uid://caai3wovnk4rs" path="res://resources/ui/FreeAction/main_gage_base.png" id="14_qisa8"]
+[ext_resource type="Script" uid="uid://inw4e1qc06yb" path="res://scene/component/action_progress_base.gd" id="15_nln40"]
+[ext_resource type="FontFile" uid="uid://b420coqgx7cq0" path="res://resources/font/TsunagiGothic.ttf" id="15_qitrf"]
+[ext_resource type="Texture2D" uid="uid://xudrtcc46m3" path="res://resources/ui/FreeAction/main_gage_empty.png" id="16_c23xs"]
+[ext_resource type="Texture2D" uid="uid://dbh14fsm3tk4t" path="res://resources/ui/FreeAction/main_gage_fill.png" id="17_trqux"]
+[ext_resource type="Script" uid="uid://be0i24kj6kavb" path="res://scene/component/free_h_ticket_multiplier.gd" id="18_5sdeo"]
+[ext_resource type="Script" uid="uid://cuumogtudxxg6" path="res://scene/component/h_talk_component.gd" id="20_nyy1m"]
+[ext_resource type="PackedScene" uid="uid://d1thb6a8p8ufs" path="res://Gameplay/XRay/x_ray_component.tscn" id="21_aikpl"]
+[ext_resource type="Texture2D" uid="uid://ht8yonan4uba" path="res://resources/ui/gui/arrow_next_hover.png" id="21_ei1pc"]
+[ext_resource type="PackedScene" uid="uid://ctfnrby2q21te" path="res://Gameplay/SubScreen/sub_screen_component.tscn" id="22_7kct0"]
+[ext_resource type="Texture2D" uid="uid://boqgqyovw8mgv" path="res://resources/omt/piston_voice/162off.png" id="23_24ywi"]
+[ext_resource type="Texture2D" uid="uid://bnc4g0pxfvc8p" path="res://resources/omt/piston_voice/162.png" id="24_poy8v"]
+[ext_resource type="Script" uid="uid://nnjff5ms5xn6" path="res://scene/component/controller_button_component.gd" id="24_wemlk"]
+[ext_resource type="Script" uid="uid://d1a32vfh2xs85" path="res://scene/component/pad_swap_label.gd" id="25_1r73j"]
+[ext_resource type="Script" uid="uid://du5fghku0j75a" path="res://scene/component/omt_component.gd" id="28_8uywe"]
+[ext_resource type="Texture2D" uid="uid://7q2vb7widh65" path="res://resources/omt/piston/083.png" id="29_gipea"]
+[ext_resource type="Texture2D" uid="uid://bperkpvm13v7b" path="res://resources/omt/piston/084.png" id="30_27f77"]
+[ext_resource type="Texture2D" uid="uid://kdw3ntq1xc14" path="res://resources/omt/piston/137.png" id="31_lttxt"]
+[ext_resource type="Texture2D" uid="uid://cov8gu1d5fk7i" path="res://resources/omt/piston/144.png" id="32_17i0s"]
+[ext_resource type="Texture2D" uid="uid://dl4eghlcotb8a" path="res://resources/omt/piston/145.png" id="33_hbs72"]
+[ext_resource type="Texture2D" uid="uid://onebw8sfme8" path="res://resources/omt/piston/149.png" id="34_mywyy"]
+[ext_resource type="Texture2D" uid="uid://blhq1w0k1bbwb" path="res://resources/omt/piston/150.png" id="35_uivih"]
+[ext_resource type="Texture2D" uid="uid://cosdw7hsf2qmk" path="res://resources/omt/hand/010.png" id="36_txn0d"]
+[ext_resource type="Texture2D" uid="uid://cda50tq33avdo" path="res://resources/omt/hand/023.png" id="37_ou8ds"]
+[ext_resource type="Texture2D" uid="uid://dp2cmorul62w3" path="res://resources/omt/hand/024.png" id="38_781bl"]
+[ext_resource type="Texture2D" uid="uid://cp4v8nuvv0mb5" path="res://resources/omt/hand/054.png" id="39_4xr6x"]
+[ext_resource type="PackedScene" uid="uid://c8spg168xguc2" path="res://Gameplay/Ui/controller_button_component.tscn" id="39_ei1pc"]
+[ext_resource type="Texture2D" uid="uid://b0pjtb3vn8fwb" path="res://resources/omt/fella/093.png" id="40_sdn8f"]
+[ext_resource type="Texture2D" uid="uid://dmmuvpfs4dihu" path="res://resources/omt/fella/097.png" id="41_j1r5f"]
+[ext_resource type="Texture2D" uid="uid://caflunrr3c4c" path="res://resources/omt/fella/124.png" id="42_twhk0"]
+[ext_resource type="Texture2D" uid="uid://ba8ertcomorcc" path="res://resources/omt/fella/143.png" id="43_mpqtk"]
+[ext_resource type="Texture2D" uid="uid://dm8dvfy7xut6s" path="res://resources/omt/fella/146.png" id="44_frsw5"]
+[ext_resource type="Texture2D" uid="uid://6eeomxlaq6l3" path="res://resources/omt/fella/148.png" id="45_2lllp"]
+[ext_resource type="Texture2D" uid="uid://brylum2xe75en" path="res://resources/omt/fella/151.png" id="46_ru1of"]
+[ext_resource type="Texture2D" uid="uid://c3pwiqahd3pxw" path="res://resources/omt/fella/152.png" id="47_a5txg"]
+[ext_resource type="Texture2D" uid="uid://c6dfh28fbry1x" path="res://resources/omt/kiss/025.png" id="48_kmend"]
+[ext_resource type="Texture2D" uid="uid://dfarsp6iubcwn" path="res://resources/omt/kiss/026.png" id="49_g4l2s"]
+[ext_resource type="Texture2D" uid="uid://gqt26k2ass7x" path="res://resources/omt/kiss/070.png" id="50_xpe1w"]
+[ext_resource type="Texture2D" uid="uid://c2ia3cqk6v0x4" path="res://resources/omt/kiss/093.png" id="51_smj0k"]
+[ext_resource type="Texture2D" uid="uid://b05wdlgbphbum" path="res://resources/omt/cum/077.png" id="52_d84s2"]
+[ext_resource type="Texture2D" uid="uid://crut75f1amobp" path="res://resources/omt/cum/078.png" id="53_7rp8t"]
+[ext_resource type="Texture2D" uid="uid://bojfpk8elakye" path="res://resources/omt/cum/085.png" id="54_7g8ie"]
+[ext_resource type="Texture2D" uid="uid://dhpjtngcgpjex" path="res://resources/omt/cum/135.png" id="55_pd44k"]
+[ext_resource type="Texture2D" uid="uid://wwfdivcpfn2l" path="res://resources/omt/cum/153.png" id="56_e1xm1"]
+[ext_resource type="Texture2D" uid="uid://b55naqkuy0hhf" path="res://resources/omt/onaho/010.png" id="57_snapk"]
+[ext_resource type="Texture2D" uid="uid://doj5cijtg56vf" path="res://resources/omt/onaho/046.png" id="58_c2qpw"]
+[ext_resource type="Texture2D" uid="uid://dx3gi5qi28i7k" path="res://resources/omt/onaho/052.png" id="59_6kv7s"]
+[ext_resource type="Texture2D" uid="uid://b7ivp2e16hswk" path="res://resources/omt/onaho/053.png" id="60_ko5kx"]
+[ext_resource type="Texture2D" uid="uid://chh7ce48k2aq" path="res://resources/omt/onaho/054.png" id="61_iagwx"]
+[ext_resource type="Texture2D" uid="uid://csv2yr7py8575" path="res://resources/omt/onaho/060.png" id="62_44iwf"]
+[ext_resource type="Texture2D" uid="uid://tiwa71ggljbx" path="res://resources/omt/onaho/061.png" id="63_s4p86"]
+[ext_resource type="Texture2D" uid="uid://cexffg1rr6ds2" path="res://resources/ui/ticket_icon.png" id="64_bthir"]
+[ext_resource type="Texture2D" uid="uid://bpij1euajwsoc" path="res://resources/omt/orgasm/139.png" id="64_ti1am"]
+[ext_resource type="Texture2D" uid="uid://0loe83gus8y0" path="res://resources/omt/orgasm/154.png" id="65_ivatf"]
+[ext_resource type="Texture2D" uid="uid://ux6dn6gucn1y" path="res://resources/omt/orgasm/156.png" id="66_dtmkn"]
+[ext_resource type="Texture2D" uid="uid://ccf1n6nyc8s6g" path="res://resources/omt/orgasm/160.png" id="67_un02n"]
+[ext_resource type="Texture2D" uid="uid://cgaax4sun3c8h" path="res://resources/omt/orgasm/161.png" id="68_3ogxo"]
+[ext_resource type="Texture2D" uid="uid://d0ajv3spjojll" path="res://resources/omt/orgasm/166.png" id="69_bthir"]
+[ext_resource type="Texture2D" uid="uid://bhenrc6o0te4f" path="res://resources/omt/orgasm/168.png" id="70_eqol1"]
+[ext_resource type="Script" uid="uid://bdxbtw4laj61s" path="res://scene/component/kb_ui_label.gd" id="70_oac80"]
+[ext_resource type="Texture2D" uid="uid://bmyk6ptsbc2rd" path="res://resources/ui/controller_icons/xbox-RB-16.png" id="71_6f0m7"]
+[ext_resource type="Texture2D" uid="uid://2kit51w8mpja" path="res://resources/omt/piston_voice/155.png" id="71_ss64q"]
+[ext_resource type="Texture2D" uid="uid://chpkyds32ff82" path="res://resources/omt/piston_voice/157.png" id="72_mqmxm"]
+[ext_resource type="Texture2D" uid="uid://dkimp8yiee2dq" path="res://resources/omt/piston_voice/164.png" id="73_wuj1l"]
+[ext_resource type="Texture2D" uid="uid://dhentajxhlccp" path="res://resources/omt/piston_voice/165.png" id="74_y7om6"]
+[ext_resource type="Texture2D" uid="uid://ba2ho5l5u3rom" path="res://resources/omt/sumata/001.png" id="75_oac80"]
+[ext_resource type="Texture2D" uid="uid://hsqpwvotqmc2" path="res://resources/omt/sumata/010.png" id="76_6f0m7"]
+[ext_resource type="Texture2D" uid="uid://cmghb2yaabqt8" path="res://resources/ui/controller_icons/xbox-LB-16.png" id="76_wlpdl"]
+[ext_resource type="Texture2D" uid="uid://sihi2uum7rh1" path="res://resources/omt/sumata/054.png" id="77_v5kmo"]
+[ext_resource type="Texture2D" uid="uid://s2knpfd1jk36" path="res://resources/omt/sumata/062.png" id="78_25cxb"]
+[ext_resource type="Texture2D" uid="uid://che12dg8jtmcm" path="res://resources/omt/sumata/083.png" id="79_rpfgv"]
+[ext_resource type="Texture2D" uid="uid://cfoa0vt6bm11t" path="res://resources/omt/sumata/084.png" id="80_wlpdl"]
+[ext_resource type="Texture2D" uid="uid://brldiejlc6wni" path="res://resources/omt/sumata/103.png" id="81_hk7gf"]
+[ext_resource type="Texture2D" uid="uid://clq60clscme1" path="res://resources/omt/sumata/104.png" id="82_tbjol"]
+[ext_resource type="Texture2D" uid="uid://d1k7k2e6t0hi5" path="res://resources/omt/sumata/105.png" id="83_pvnpy"]
+[ext_resource type="Texture2D" uid="uid://c477tbs344uvh" path="res://resources/omt/breast_touch/011.png" id="84_g58xx"]
+[ext_resource type="Texture2D" uid="uid://j4vpu8v32tdf" path="res://resources/omt/breast_touch/012.png" id="85_7lj5e"]
+[ext_resource type="Texture2D" uid="uid://dfi0kvtv6ofye" path="res://resources/omt/breast_touch/017.png" id="86_s2tb1"]
+[ext_resource type="Texture2D" uid="uid://k4ahkhoamev7" path="res://resources/omt/breast_touch/018.png" id="87_uuhmx"]
+[ext_resource type="Texture2D" uid="uid://cl814hpf8b23i" path="res://resources/omt/breast_touch/023.png" id="88_sdxy5"]
+[ext_resource type="Texture2D" uid="uid://cbmmngfh0fhab" path="res://resources/omt/breast_touch/024.png" id="89_wec21"]
+[ext_resource type="Texture2D" uid="uid://cyp3ntnn5vn8k" path="res://resources/omt/breast_touch/029.png" id="90_3cebf"]
+[ext_resource type="Texture2D" uid="uid://diw71725m1hqu" path="res://resources/omt/breast_touch/054.png" id="91_yjcum"]
+[ext_resource type="Script" path="res://scene/component/zoom_in_component.gd" id="93_5myok"]
+[ext_resource type="Texture2D" uid="uid://ckytudgsjj08k" path="res://resources/ui/controller_icons/xbox-L3.png" id="95_imumn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y1pgo"]
+font_size = 8
+outline_size = 3
+outline_color = Color(0.4, 0.321569, 0.345098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_yylxb"]
+font_size = 17
+outline_size = 5
+outline_color = Color(0.4, 0.321569, 0.345098, 1)
+
+[sub_resource type="Animation" id="Animation_spk51"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_yylxb"]
+resource_name = "stroke"
+length = 1.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0cr0v"]
+_data = {
+&"RESET": SubResource("Animation_spk51"),
+&"stroke": SubResource("Animation_yylxb")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_a836h"]
+font = ExtResource("15_qitrf")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_1lgxx"]
+font_size = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_spk51"]
+font_size = 13
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pubne"]
+font_size = 7
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f4aao"]
+font_size = 9
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4100a"]
+font_size = 6
+outline_size = 3
+outline_color = Color(0.4, 0.321569, 0.345098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0qrk4"]
+font_size = 6
+outline_size = 3
+outline_color = Color(0.4, 0.321569, 0.345098, 1)
+
+[sub_resource type="Animation" id="Animation_54x6d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ActionUI/HBoxContainer/ExitLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fv4hu"]
+resource_name = "flicking"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ActionUI/HBoxContainer/ExitLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.313726), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_051op"]
+_data = {
+&"RESET": SubResource("Animation_54x6d"),
+&"flicking": SubResource("Animation_fv4hu")
+}
+
+[node name="FreeActionComponent" type="Node" node_paths=PackedStringArray("free_action_ticket_multiplier")]
+script = ExtResource("1_03acr")
+free_action_ticket_multiplier = NodePath("CanvasLayer/ActionUI/FreeHTicketMultiplier")
+zoom_speed = 0.7
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="ActionUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("free_action")]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_fa4vs")
+free_action = NodePath("../..")
+
+[node name="Stop" type="TextureButton" parent="CanvasLayer/ActionUI"]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 0
+offset_left = 594.0
+offset_top = 302.0
+offset_right = 609.0
+offset_bottom = 317.0
+pivot_offset = Vector2(10.5, 11)
+focus_mode = 0
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("3_dyiuj")
+texture_pressed = ExtResource("4_1k5uq")
+texture_hover = ExtResource("4_1k5uq")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ButtonSetAnimComponent" type="Node" parent="CanvasLayer/ActionUI/Stop" node_paths=PackedStringArray("is_owner")]
+script = ExtResource("5_cisj0")
+is_owner = NodePath("..")
+
+[node name="Play" type="TextureButton" parent="CanvasLayer/ActionUI"]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 0
+offset_left = 577.5
+offset_top = 277.5
+offset_right = 592.5
+offset_bottom = 292.5
+rotation = -1.57079
+pivot_offset = Vector2(10.5, 11)
+focus_mode = 0
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("6_i8khw")
+texture_pressed = ExtResource("7_tgbsp")
+texture_hover = ExtResource("7_tgbsp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ButtonSetAnimComponent" type="Node" parent="CanvasLayer/ActionUI/Play" node_paths=PackedStringArray("is_owner")]
+script = ExtResource("5_cisj0")
+is_owner = NodePath("..")
+
+[node name="Double" type="TextureButton" parent="CanvasLayer/ActionUI"]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 0
+offset_left = 595.5
+offset_top = 277.5
+offset_right = 610.5
+offset_bottom = 292.5
+rotation = -1.57079
+pivot_offset = Vector2(10.5, 11)
+focus_mode = 0
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("8_vc7yx")
+texture_pressed = ExtResource("9_cxs4i")
+texture_hover = ExtResource("9_cxs4i")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ButtonSetAnimComponent" type="Node" parent="CanvasLayer/ActionUI/Double" node_paths=PackedStringArray("is_owner")]
+script = ExtResource("5_cisj0")
+is_owner = NodePath("..")
+
+[node name="Label2" type="Label" parent="CanvasLayer/ActionUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.945
+anchor_top = 0.791
+anchor_right = 0.945
+anchor_bottom = 0.791
+offset_left = -164.8
+offset_top = 19.24
+offset_right = -11.8
+offset_bottom = 36.24
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "FREE_H_SCENE_DOWN_KEY"
+label_settings = SubResource("LabelSettings_y1pgo")
+horizontal_alignment = 2
+script = ExtResource("25_1r73j")
+
+[node name="Label" type="Label" parent="CanvasLayer/ActionUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.916
+anchor_top = 0.712
+anchor_right = 0.916
+anchor_bottom = 0.712
+offset_left = -163.24
+offset_top = 29.68
+offset_right = -11.2401
+offset_bottom = 44.68
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 11
+text = "FREE_H_SCENE_UP_KEY"
+label_settings = SubResource("LabelSettings_y1pgo")
+horizontal_alignment = 2
+script = ExtResource("25_1r73j")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ActionUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -93.0
+offset_top = 8.0
+offset_right = 93.0
+offset_bottom = 48.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="ExitLabel" type="Label" parent="CanvasLayer/ActionUI/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "FREE_H_SCENE_EXIT"
+label_settings = SubResource("LabelSettings_yylxb")
+horizontal_alignment = 1
+script = ExtResource("25_1r73j")
+
+[node name="PadUiIcon" type="TextureRect" parent="CanvasLayer/ActionUI/HBoxContainer/ExitLabel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_right = -6.0
+grow_vertical = 2
+texture = ExtResource("12_6uqe7")
+stretch_mode = 5
+script = ExtResource("24_wemlk")
+metadata/_custom_type_script = "uid://nnjff5ms5xn6"
+
+[node name="ActionProgressBase" type="Sprite2D" parent="CanvasLayer/ActionUI"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(624, 316)
+rotation = -1.57079
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("14_qisa8")
+hframes = 7
+script = ExtResource("15_nln40")
+
+[node name="ActionProgressBar" type="TextureProgressBar" parent="CanvasLayer/ActionUI/ActionProgressBase"]
+unique_name_in_owner = true
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.5
+offset_top = -30.0
+offset_right = -13.5
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+step = 0.5
+value = 50.0
+texture_under = ExtResource("16_c23xs")
+texture_progress = ExtResource("17_trqux")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="ActionProgressAnim" type="AnimationPlayer" parent="CanvasLayer/ActionUI/ActionProgressBase"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_0cr0v")
+}
+autoplay = "stroke"
+
+[node name="FreeHTicketMultiplier" type="Control" parent="CanvasLayer/ActionUI"]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 252.0
+offset_right = 48.0
+offset_bottom = 292.0
+script = ExtResource("18_5sdeo")
+
+[node name="TicketBonusTitle" type="Label" parent="CanvasLayer/ActionUI/FreeHTicketMultiplier"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -21.0
+offset_right = 28.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bonus♥♥"
+label_settings = SubResource("LabelSettings_a836h")
+
+[node name="TicketBonusTexture" type="TextureRect" parent="CanvasLayer/ActionUI/FreeHTicketMultiplier"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -10.0
+offset_right = -13.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("64_bthir")
+expand_mode = 1
+
+[node name="TicketBonusStack" type="Label" parent="CanvasLayer/ActionUI/FreeHTicketMultiplier"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -11.0
+offset_right = 26.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x45"
+label_settings = SubResource("LabelSettings_1lgxx")
+
+[node name="HTalkComponent" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("free_action_component")]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -47.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+mouse_filter = 2
+script = ExtResource("20_nyy1m")
+free_action_component = NodePath("../..")
+
+[node name="HTalkLabel" type="Label" parent="CanvasLayer/HTalkComponent"]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -12.0
+offset_right = 175.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "あ…ああんっ…！気持ちいいです…！もっと、熱いおちんちんで…激しく…かき回してください…っ！"
+label_settings = SubResource("LabelSettings_spk51")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HTalkTimer" type="Timer" parent="CanvasLayer/HTalkComponent"]
+one_shot = true
+
+[node name="ShowTimer" type="Timer" parent="CanvasLayer/HTalkComponent"]
+one_shot = true
+
+[node name="XRayComponent" parent="CanvasLayer" node_paths=PackedStringArray("free_action_component") instance=ExtResource("21_aikpl")]
+position = Vector2(588, 124)
+free_action_component = NodePath("../..")
+
+[node name="SubScreenComponent" parent="CanvasLayer" node_paths=PackedStringArray("free_action_component") instance=ExtResource("22_7kct0")]
+visible = false
+position = Vector2(116, 135)
+free_action_component = NodePath("../..")
+
+[node name="CumEffect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.0784314)
+
+[node name="OMTToggleButton" type="TextureButton" parent="CanvasLayer"]
+unique_name_in_owner = true
+texture_filter = 2
+offset_left = 598.0
+offset_top = 231.0
+offset_right = 647.0
+offset_bottom = 280.0
+pivot_offset = Vector2(25, 26)
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("23_24ywi")
+texture_pressed = ExtResource("24_poy8v")
+texture_hover = ExtResource("24_poy8v")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="StateLabel" type="Label" parent="CanvasLayer/OMTToggleButton"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -45.000004
+offset_right = -12.0
+offset_bottom = -34.79167
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "ON"
+label_settings = SubResource("LabelSettings_pubne")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="StateLabel2" type="Label" parent="CanvasLayer/OMTToggleButton"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -17.0
+offset_right = -28.0
+offset_bottom = -3.875
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "R"
+label_settings = SubResource("LabelSettings_f4aao")
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("70_oac80")
+
+[node name="ButtonSetAnimComponent" type="Node" parent="CanvasLayer/OMTToggleButton" node_paths=PackedStringArray("is_owner")]
+script = ExtResource("5_cisj0")
+is_owner = NodePath("..")
+
+[node name="ControllerButtonComponent" parent="CanvasLayer/OMTToggleButton" instance=ExtResource("39_ei1pc")]
+texture_filter = 1
+layout_mode = 1
+offset_left = -20.5
+offset_top = 9.5
+offset_right = -10.5
+offset_bottom = 19.5
+texture = ExtResource("71_6f0m7")
+
+[node name="OMTComponent" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("cum_ef", "texture_sample")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("28_8uywe")
+piston = Array[CompressedTexture2D]([ExtResource("29_gipea"), ExtResource("30_27f77"), ExtResource("31_lttxt"), ExtResource("32_17i0s"), ExtResource("33_hbs72"), ExtResource("34_mywyy"), ExtResource("35_uivih")])
+hand = Array[CompressedTexture2D]([ExtResource("36_txn0d"), ExtResource("37_ou8ds"), ExtResource("38_781bl"), ExtResource("39_4xr6x")])
+fella = Array[CompressedTexture2D]([ExtResource("40_sdn8f"), ExtResource("41_j1r5f"), ExtResource("42_twhk0"), ExtResource("43_mpqtk"), ExtResource("44_frsw5"), ExtResource("45_2lllp"), ExtResource("46_ru1of"), ExtResource("47_a5txg")])
+kiss = Array[CompressedTexture2D]([ExtResource("48_kmend"), ExtResource("49_g4l2s"), ExtResource("50_xpe1w"), ExtResource("51_smj0k")])
+cum = Array[CompressedTexture2D]([ExtResource("52_d84s2"), ExtResource("53_7rp8t"), ExtResource("54_7g8ie"), ExtResource("55_pd44k"), ExtResource("56_e1xm1")])
+onaho = Array[CompressedTexture2D]([ExtResource("57_snapk"), ExtResource("58_c2qpw"), ExtResource("59_6kv7s"), ExtResource("60_ko5kx"), ExtResource("61_iagwx"), ExtResource("62_44iwf"), ExtResource("63_s4p86")])
+orgasm = Array[CompressedTexture2D]([ExtResource("64_ti1am"), ExtResource("65_ivatf"), ExtResource("66_dtmkn"), ExtResource("67_un02n"), ExtResource("68_3ogxo"), ExtResource("69_bthir"), ExtResource("70_eqol1")])
+piston_voice = Array[CompressedTexture2D]([ExtResource("71_ss64q"), ExtResource("72_mqmxm"), ExtResource("24_poy8v"), ExtResource("73_wuj1l"), ExtResource("74_y7om6")])
+sumata = Array[CompressedTexture2D]([ExtResource("75_oac80"), ExtResource("76_6f0m7"), ExtResource("77_v5kmo"), ExtResource("78_25cxb"), ExtResource("79_rpfgv"), ExtResource("80_wlpdl"), ExtResource("81_hk7gf"), ExtResource("82_tbjol"), ExtResource("83_pvnpy")])
+breast_touch = Array[CompressedTexture2D]([ExtResource("84_g58xx"), ExtResource("85_7lj5e"), ExtResource("86_s2tb1"), ExtResource("87_uuhmx"), ExtResource("88_sdxy5"), ExtResource("89_wec21"), ExtResource("90_3cebf"), ExtResource("91_yjcum")])
+cum_ef = NodePath("../CumEffect")
+texture_sample = NodePath("OMTTextureSample")
+
+[node name="OMTTextureSample" type="TextureRect" parent="CanvasLayer/OMTComponent"]
+visible = false
+texture_filter = 2
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 72.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("31_lttxt")
+stretch_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = 34.0
+offset_right = -3.0
+offset_bottom = 44.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer3"]
+layout_mode = 2
+text = "FREE_H_SCREEN_ZOOM"
+label_settings = SubResource("LabelSettings_4100a")
+horizontal_alignment = 2
+script = ExtResource("25_1r73j")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = 41.0
+offset_right = -3.0
+offset_bottom = 57.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+text = "FREE_H_EDGE_BLUR"
+label_settings = SubResource("LabelSettings_4100a")
+horizontal_alignment = 2
+script = ExtResource("25_1r73j")
+
+[node name="ControllerButtonComponent" parent="CanvasLayer/HBoxContainer" instance=ExtResource("39_ei1pc")]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+texture = ExtResource("76_wlpdl")
+stretch_mode = 5
+
+[node name="ZoomInComponent" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("free_action_component")]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("93_5myok")
+free_action_component = NodePath("../..")
+debug = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ZoomInComponent"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 117.0
+offset_top = -16.0
+offset_right = 294.0
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.12, 0.12)
+mouse_filter = 2
+texture = ExtResource("21_ei1pc")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/ZoomInComponent"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -16.0
+offset_right = -1.0
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.12, 0.12)
+mouse_filter = 2
+texture = ExtResource("21_ei1pc")
+flip_h = true
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/ZoomInComponent"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 114.0
+offset_right = 177.0
+offset_bottom = 419.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+scale = Vector2(0.12, 0.12)
+mouse_filter = 2
+texture = ExtResource("21_ei1pc")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/ZoomInComponent"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -128.0
+offset_right = 177.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+scale = Vector2(0.12, 0.12)
+mouse_filter = 2
+texture = ExtResource("21_ei1pc")
+flip_h = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = 23.0
+offset_right = -3.0
+offset_bottom = 33.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="PanningLabel" type="Label" parent="CanvasLayer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "FREE_H_PANNING"
+label_settings = SubResource("LabelSettings_0qrk4")
+horizontal_alignment = 2
+script = ExtResource("25_1r73j")
+
+[node name="ControllerButtonComponent" parent="CanvasLayer/HBoxContainer2" instance=ExtResource("39_ei1pc")]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+texture = ExtResource("95_imumn")
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_051op")
+}
+autoplay = "flicking"
+
+[connection signal="mouse_entered" from="CanvasLayer/ActionUI/Stop" to="." method="_on_stop_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/ActionUI/Stop" to="." method="_on_stop_pressed"]
+[connection signal="pressed" from="CanvasLayer/ActionUI/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/ActionUI/Double" to="." method="_on_double_pressed"]
+[connection signal="toggled" from="CanvasLayer/OMTToggleButton" to="CanvasLayer/OMTComponent" method="_on_omt_toggle_button_toggled"]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://cepl2jt2a37wn"]
+
+[ext_resource type="Texture2D" uid="uid://badv13yt81v1g" path="res://resources/ui/textBubble.png" id="1_4cfu6"]
+[ext_resource type="Script" uid="uid://dnwy3pqegd63g" path="res://Gameplay/Ui/talk_bubble.gd" id="2_ngq1f"]
+[ext_resource type="FontFile" uid="uid://drk4ye7wq0wjq" path="res://resources/font/ShipporiGothicB2-Bold.ttf" id="3_lugut"]
+[ext_resource type="Texture2D" uid="uid://qi2pnjq3nnb1" path="res://resources/ui/controller_icons/xbox-A.png" id="4_wqojs"]
+[ext_resource type="Script" uid="uid://nnjff5ms5xn6" path="res://scene/component/controller_button_component.gd" id="5_1520v"]
+[ext_resource type="PackedScene" uid="uid://c7tthty2e1w31" path="res://Gameplay/Ui/auto_shirink_component.tscn" id="6_autoshrink"]
+[ext_resource type="FontFile" uid="uid://bonxivvx2h07t" path="res://resources/font/NotoSansEN-Medium.ttf" id="7_noto"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wqojs"]
+light_mode = 1
+
+[sub_resource type="FontVariation" id="FontVariation_ru_fallback"]
+base_font = ExtResource("3_lugut")
+fallbacks = Array[Font]([ExtResource("7_noto")])
+
+[sub_resource type="LabelSettings" id="LabelSettings_vsnvk"]
+font = SubResource("FontVariation_ru_fallback")
+font_size = 8
+font_color = Color(0.92, 0.2484, 0.5842, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="TextBubble" type="Sprite2D"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_wqojs")
+position = Vector2(37, -226)
+texture = ExtResource("1_4cfu6")
+offset = Vector2(0, -24)
+script = ExtResource("2_ngq1f")
+
+[node name="NewLabel" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -94.0
+offset_right = 4.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "NEW"
+label_settings = SubResource("LabelSettings_vsnvk")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="AutoShirinkComponent" parent="NewLabel" instance=ExtResource("6_autoshrink")]
+max_font_size = 8
+min_font_size = 6
+
+[node name="PadUiIcon" type="TextureRect" parent="."]
+offset_left = -22.0
+offset_top = -18.0
+offset_right = -12.0
+offset_bottom = -8.0
+texture = ExtResource("4_wqojs")
+expand_mode = 1
+script = ExtResource("5_1520v")
+metadata/_custom_type_script = "uid://nnjff5ms5xn6"
