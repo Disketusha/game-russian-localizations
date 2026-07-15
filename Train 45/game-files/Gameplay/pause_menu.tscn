@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://rye76hy4dovq" path="res://scene/UI/confirm_box.tscn" id="4_othj8"]
 [ext_resource type="Texture2D" uid="uid://gq8jvytq8fev" path="res://resources/ui/PauseMenu/pause_box.png" id="5_3fgga"]
 [ext_resource type="AudioStream" uid="uid://1rppdvq8ivu8" path="res://sound/sfx/ui/paper_move.wav" id="5_agder"]
-[ext_resource type="Texture2D" uid="uid://bgwulps41itw" path="res://resources/ui/PauseMenu/pause_front.png" id="6_2aw8x"]
+[ext_resource type="Texture2D" uid="uid://04i4kngx1pha" path="res://resources/ui/PauseMenu/pause_front_ru.png" id="6_2aw8x"]
 [ext_resource type="Theme" uid="uid://cd3b0shenebsc" path="res://resources/ui/PauseMenu/pause_menu.tres" id="6_7wop1"]
 [ext_resource type="Script" uid="uid://cn7jhefucm0q" path="res://Gameplay/PauseBox.gd" id="7_788p3"]
 [ext_resource type="Script" uid="uid://w286c8i2c607" path="res://Gameplay/AnimationComponent.gd" id="8_lu18x"]
@@ -571,9 +571,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -173.21332
+offset_left = -337.0
 offset_top = 4.0
-offset_right = -19.109314
+offset_right = -183.0
 offset_bottom = 77.0
 grow_horizontal = 2
 text = "(Shift)"
