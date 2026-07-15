@@ -1,0 +1,1110 @@
+[gd_scene load_steps=27 format=3 uid="uid://bxe7ke7bkgu2r"]
+
+[ext_resource type="Script" uid="uid://dwjc625k8u7hf" path="res://Gameplay/options_menu.gd" id="1_bobwo"]
+[ext_resource type="Texture2D" uid="uid://c72cd6hn54obo" path="res://resources/ui/OptionMenu/option_back.png" id="2_3f6uj"]
+[ext_resource type="Script" uid="uid://c67vgxet3mm8y" path="res://Gameplay/ui_state_player.gd" id="2_pajl2"]
+[ext_resource type="PackedScene" uid="uid://b7x0h1w2unepo" path="res://scene/UI/focus_rect.tscn" id="3_11on4"]
+[ext_resource type="Theme" uid="uid://dnxt711w5kqeo" path="res://resources/ui/OptionMenu/option_theme.tres" id="3_r0hkg"]
+[ext_resource type="Script" uid="uid://cxy57s25lojxh" path="res://Gameplay/option_volume_slider.gd" id="7_548ya"]
+[ext_resource type="Texture2D" uid="uid://bmyk6ptsbc2rd" path="res://resources/ui/controller_icons/xbox-RB-16.png" id="7_etlpc"]
+[ext_resource type="Script" uid="uid://nnjff5ms5xn6" path="res://scene/component/controller_button_component.gd" id="8_fjq8l"]
+[ext_resource type="PackedScene" uid="uid://cvorrprxskobm" path="res://Gameplay/font_change_component.tscn" id="8_ul5ae"]
+[ext_resource type="Texture2D" uid="uid://cmghb2yaabqt8" path="res://resources/ui/controller_icons/xbox-LB-16.png" id="9_5kjos"]
+[ext_resource type="Script" path="res://scene/component/pad_swap_label.gd" id="10_padswap"]
+[ext_resource type="PackedScene" uid="uid://c7tthty2e1w31" path="res://Gameplay/Ui/auto_shirink_component.tscn" id="11_autoshrink"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_548ya"]
+line_spacing = -7.0
+font_size = 20
+font_color = Color(0.045166, 0.0422363, 0.0368652, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ul5ae"]
+line_spacing = -7.0
+font_size = 9
+font_color = Color(0.045166, 0.0422363, 0.0368652, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7llp7"]
+line_spacing = -7.0
+font_size = 17
+font_color = Color(0.045166, 0.0422363, 0.0368652, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gsxmw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_548ya"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul5ae"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7llp7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjq8l"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 6
+border_width_top = 3
+border_width_right = 6
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="Theme" id="Theme_gsxmw"]
+TabContainer/constants/side_margin = 23
+TabContainer/font_sizes/font_size = 18
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_gsxmw")
+TabContainer/styles/tab_disabled = SubResource("StyleBoxFlat_548ya")
+TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_ul5ae")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_7llp7")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_fjq8l")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_fjq8l")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ff7b"]
+font_size = 10
+font_color = Color(0.23529412, 0.23137255, 0.21568628, 1)
+
+[sub_resource type="Animation" id="Animation_kv4qy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 360)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../ColorRect:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o157p"]
+resource_name = "in"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(230, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [0.125664, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qfad7"]
+resource_name = "out"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(230, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [0.0, 0.125664]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../ColorRect:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_udty3"]
+_data = {
+&"RESET": SubResource("Animation_kv4qy"),
+&"in": SubResource("Animation_o157p"),
+&"out": SubResource("Animation_qfad7")
+}
+
+[node name="Menu" type="Control" node_paths=PackedStringArray("focus_rect", "title_labels")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bobwo")
+focus_rect = NodePath("CanvasLayer/Panel/FocusRect")
+title_labels = [NodePath("CanvasLayer/Panel/TitleLabelKR"), NodePath("CanvasLayer/Panel/TitleLabelJP"), NodePath("CanvasLayer/Panel/TitleLabelZH"), NodePath("CanvasLayer/Panel/TitleLabelCN"), NodePath("CanvasLayer/Panel/TitleLabelEN")]
+
+[node name="UiStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+bus = &"Sfx"
+script = ExtResource("2_pajl2")
+
+[node name="UiButtonStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Sfx"
+script = ExtResource("2_pajl2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 12
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.552941)
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(640, 360)
+offset_right = 640.0
+offset_bottom = 360.0
+pivot_offset = Vector2(320, 180)
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 119.0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("2_3f6uj")
+expand_mode = 1
+
+[node name="TitleLabelKR" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 96.0
+offset_right = 237.0
+offset_bottom = 228.0
+text = "설정"
+label_settings = SubResource("LabelSettings_548ya")
+horizontal_alignment = 1
+autowrap_mode = 1
+justification_flags = 227
+
+[node name="TitleSmallLabel" type="Label" parent="CanvasLayer/Panel/TitleLabelKR"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 56.0
+offset_bottom = 17.0
+rotation = 1.5708
+text = "Settings"
+label_settings = SubResource("LabelSettings_ul5ae")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TitleLabelJP" type="Label" parent="CanvasLayer/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 209.0
+offset_top = 96.0
+offset_right = 245.0
+offset_bottom = 228.0
+text = "MAIN_OPTION"
+label_settings = SubResource("LabelSettings_548ya")
+horizontal_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 1
+
+[node name="TitleSmallLabel" type="Label" parent="CanvasLayer/Panel/TitleLabelJP"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 63.0
+offset_bottom = 19.0
+rotation = 1.5708
+text = "Settings"
+label_settings = SubResource("LabelSettings_ul5ae")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TitleLabelZH" type="Label" parent="CanvasLayer/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 209.0
+offset_top = 96.0
+offset_right = 245.0
+offset_bottom = 228.0
+text = "MAIN_OPTION"
+label_settings = SubResource("LabelSettings_548ya")
+horizontal_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 1
+
+[node name="TitleSmallLabel" type="Label" parent="CanvasLayer/Panel/TitleLabelZH"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 63.0
+offset_bottom = 19.0
+rotation = 1.5708
+text = "Settings"
+label_settings = SubResource("LabelSettings_ul5ae")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TitleLabelCN" type="Label" parent="CanvasLayer/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 209.0
+offset_top = 96.0
+offset_right = 245.0
+offset_bottom = 228.0
+text = "MAIN_OPTION"
+label_settings = SubResource("LabelSettings_548ya")
+horizontal_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 1
+
+[node name="TitleSmallLabel" type="Label" parent="CanvasLayer/Panel/TitleLabelCN"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 63.0
+offset_bottom = 19.0
+rotation = 1.5708
+text = "Settings"
+label_settings = SubResource("LabelSettings_ul5ae")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TitleLabelEN" type="Label" parent="CanvasLayer/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 240.0
+offset_top = 100.0
+offset_right = 310.0
+offset_bottom = 129.0
+rotation = 1.5708
+text = "MAIN_OPTION"
+label_settings = SubResource("LabelSettings_7llp7")
+horizontal_alignment = 1
+justification_flags = 227
+
+[node name="AutoShirinkComponent" parent="CanvasLayer/Panel/TitleLabelEN" instance=ExtResource("11_autoshrink")]
+max_font_size = 17
+min_font_size = 10
+
+[node name="FocusRect" parent="CanvasLayer/Panel" instance=ExtResource("3_11on4")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 100.0
+offset_bottom = 30.0
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 249.0
+offset_top = 16.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_gsxmw")
+current_tab = 0
+tab_focus_mode = 0
+
+[node name="ScTab" type="TabBar" parent="CanvasLayer/Panel/TabContainer"]
+layout_mode = 2
+focus_mode = 0
+tab_alignment = 2
+metadata/_tab_index = 0
+
+[node name="LanguageContainer" type="HBoxContainer" parent="CanvasLayer/Panel/TabContainer/ScTab"]
+custom_minimum_size = Vector2(339, 30)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 56.0
+offset_right = 368.0
+offset_bottom = 92.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/ScTab/LanguageContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -3
+alignment = 1
+
+[node name="LanguageLable" type="Label" parent="CanvasLayer/Panel/TabContainer/ScTab/LanguageContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+text = "OPTION_LANGUAGE"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/ScTab/LanguageContainer/VBoxContainer" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "Language"
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/Panel/TabContainer/ScTab/LanguageContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_r0hkg")
+alignment = 1
+selected = 0
+item_count = 5
+popup/item_0/text = "English"
+popup/item_0/id = 4
+popup/item_1/text = "繁體中文"
+popup/item_1/id = 2
+popup/item_2/text = "简体中文"
+popup/item_2/id = 3
+popup/item_3/text = "日本語"
+popup/item_3/id = 1
+popup/item_4/text = "한국어"
+popup/item_4/id = 0
+
+[node name="ResolutionContainer2" type="HBoxContainer" parent="CanvasLayer/Panel/TabContainer/ScTab"]
+custom_minimum_size = Vector2(339, 30)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 96.0
+offset_right = 368.0
+offset_bottom = 132.0
+size_flags_vertical = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/ScTab/ResolutionContainer2"]
+layout_mode = 2
+theme_override_constants/separation = -3
+alignment = 1
+
+[node name="ResolutionLable" type="Label" parent="CanvasLayer/Panel/TabContainer/ScTab/ResolutionContainer2/VBoxContainer2"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+text = "OPTION_RESOLUTION"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/ScTab/ResolutionContainer2/VBoxContainer2" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "Resolution"
+
+[node name="Resolution" type="OptionButton" parent="CanvasLayer/Panel/TabContainer/ScTab/ResolutionContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("3_r0hkg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/TabContainer/ScTab"]
+custom_minimum_size = Vector2(339, 30)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 134.0
+offset_right = 368.0
+offset_bottom = 170.0
+theme_override_constants/separation = 55
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/ScTab/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -3
+alignment = 1
+
+[node name="LanguageLable" type="Label" parent="CanvasLayer/Panel/TabContainer/ScTab/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+text = "OPTION_FULLSCREEN"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/ScTab/HBoxContainer/VBoxContainer3" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "Fullscreen"
+
+[node name="FullScreen" type="CheckBox" parent="CanvasLayer/Panel/TabContainer/ScTab/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme = ExtResource("3_r0hkg")
+alignment = 1
+
+[node name="LightingHBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/TabContainer/ScTab"]
+custom_minimum_size = Vector2(339, 30)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 175.0
+offset_right = 368.0
+offset_bottom = 211.0
+theme_override_constants/separation = 47
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/ScTab/LightingHBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -3
+alignment = 1
+
+[node name="LightingLabel" type="Label" parent="CanvasLayer/Panel/TabContainer/ScTab/LightingHBoxContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+text = "LOW_SPEC_MODE"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/ScTab/LightingHBoxContainer/VBoxContainer4" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "Performance Mode"
+
+[node name="LightingQuality" type="CheckBox" parent="CanvasLayer/Panel/TabContainer/ScTab/LightingHBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme = ExtResource("3_r0hkg")
+alignment = 1
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/ScTab"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 265.0
+offset_right = 433.0
+offset_bottom = 302.0
+theme_override_constants/separation = -2
+
+[node name="Back" type="Button" parent="CanvasLayer/Panel/TabContainer/ScTab/VBoxContainer5" groups=["back"]]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_r0hkg")
+text = "OPTION_BACK"
+alignment = 0
+clip_text = true
+
+[node name="AutoShirinkComponent" parent="CanvasLayer/Panel/TabContainer/ScTab/VBoxContainer5/Back" instance=ExtResource("11_autoshrink")]
+max_font_size = 16
+min_font_size = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/ScTab/VBoxContainer5" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "Exit"
+
+[node name="VoTab" type="TabBar" parent="CanvasLayer/Panel/TabContainer"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+tab_alignment = 2
+metadata/_tab_index = 1
+
+[node name="VoiceLangContainer" type="HBoxContainer" parent="CanvasLayer/Panel/TabContainer/VoTab"]
+custom_minimum_size = Vector2(339, 30)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 57.0
+offset_right = 368.0
+offset_bottom = 93.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/VoTab/VoiceLangContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -3
+alignment = 1
+
+[node name="LanguageLable" type="Label" parent="CanvasLayer/Panel/TabContainer/VoTab/VoiceLangContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+text = "OPTION_VO_LANGUAGE"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/VoTab/VoiceLangContainer/VBoxContainer" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "Voice Language"
+
+[node name="VOOptionButton" type="OptionButton" parent="CanvasLayer/Panel/TabContainer/VoTab/VoiceLangContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("3_r0hkg")
+alignment = 1
+selected = 0
+item_count = 1
+popup/item_0/text = "VO_JP"
+popup/item_0/id = 0
+
+[node name="MasterVoContainer" type="HBoxContainer" parent="CanvasLayer/Panel/TabContainer/VoTab"]
+custom_minimum_size = Vector2(339, 30)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 96.0
+offset_right = 368.0
+offset_bottom = 132.0
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/VoTab/MasterVoContainer"]
+layout_mode = 2
+theme_override_constants/separation = -3
+alignment = 1
+
+[node name="VolumeLable" type="Label" parent="CanvasLayer/Panel/TabContainer/VoTab/MasterVoContainer/VBoxContainer4"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+text = "OPTION_MASTER_VOLUME"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/VoTab/MasterVoContainer/VBoxContainer4" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "Master Volume"
+
+[node name="MasterVoSlider" type="HSlider" parent="CanvasLayer/Panel/TabContainer/VoTab"]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 193.0
+offset_top = 105.0
+offset_right = 685.0
+offset_bottom = 155.0
+scale = Vector2(0.32, 0.32)
+size_flags_vertical = 4
+theme = ExtResource("3_r0hkg")
+max_value = 1.0
+step = 0.05
+value = 0.5
+script = ExtResource("7_548ya")
+bus_name = "Master"
+
+[node name="CharVoContainer" type="HBoxContainer" parent="CanvasLayer/Panel/TabContainer/VoTab"]
+custom_minimum_size = Vector2(339, 30)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 136.0
+offset_right = 368.0
+offset_bottom = 172.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/VoTab/CharVoContainer"]
+layout_mode = 2
+theme_override_constants/separation = -3
+alignment = 1
+
+[node name="VolumeLable" type="Label" parent="CanvasLayer/Panel/TabContainer/VoTab/CharVoContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+text = "OPTION_CHAR_VOLUME"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/VoTab/CharVoContainer/VBoxContainer" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "Character Volume"
+
+[node name="CharVolumeSlider" type="HSlider" parent="CanvasLayer/Panel/TabContainer/VoTab"]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 193.0
+offset_top = 142.0
+offset_right = 685.0
+offset_bottom = 192.0
+scale = Vector2(0.32, 0.32)
+size_flags_vertical = 4
+theme = ExtResource("3_r0hkg")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("7_548ya")
+bus_name = "Character"
+
+[node name="SfxVOContainer" type="HBoxContainer" parent="CanvasLayer/Panel/TabContainer/VoTab"]
+custom_minimum_size = Vector2(339, 30)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 175.0
+offset_right = 368.0
+offset_bottom = 211.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/VoTab/SfxVOContainer"]
+layout_mode = 2
+theme_override_constants/separation = -3
+alignment = 1
+
+[node name="VolumeLable" type="Label" parent="CanvasLayer/Panel/TabContainer/VoTab/SfxVOContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+text = "OPTION_SFX_VOLUME"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/VoTab/SfxVOContainer/VBoxContainer" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "Sfx Volume"
+
+[node name="SfxVolumeSlider" type="HSlider" parent="CanvasLayer/Panel/TabContainer/VoTab"]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 193.0
+offset_top = 181.0
+offset_right = 685.0
+offset_bottom = 231.0
+scale = Vector2(0.32, 0.32)
+size_flags_vertical = 4
+theme = ExtResource("3_r0hkg")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("7_548ya")
+bus_name = "Sfx"
+
+[node name="BGVoContainer" type="HBoxContainer" parent="CanvasLayer/Panel/TabContainer/VoTab"]
+custom_minimum_size = Vector2(339, 30)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 215.0
+offset_right = 368.0
+offset_bottom = 251.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/VoTab/BGVoContainer"]
+layout_mode = 2
+theme_override_constants/separation = -3
+alignment = 1
+
+[node name="VolumeLable" type="Label" parent="CanvasLayer/Panel/TabContainer/VoTab/BGVoContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+text = "OPTION_BG_VOLUME"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/VoTab/BGVoContainer/VBoxContainer" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "Bg Volume"
+
+[node name="BGVolumeSlider" type="HSlider" parent="CanvasLayer/Panel/TabContainer/VoTab"]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 193.0
+offset_top = 221.0
+offset_right = 685.0
+offset_bottom = 271.0
+scale = Vector2(0.32, 0.32)
+size_flags_vertical = 4
+theme = ExtResource("3_r0hkg")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("7_548ya")
+bus_name = "Music"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/VoTab"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 265.0
+offset_right = 433.0
+offset_bottom = 302.0
+theme_override_constants/separation = -2
+
+[node name="Back" type="Button" parent="CanvasLayer/Panel/TabContainer/VoTab/VBoxContainer4" groups=["back"]]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_r0hkg")
+text = "OPTION_BACK"
+alignment = 0
+clip_text = true
+
+[node name="AutoShirinkComponent" parent="CanvasLayer/Panel/TabContainer/VoTab/VBoxContainer4/Back" instance=ExtResource("11_autoshrink")]
+max_font_size = 16
+min_font_size = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/VoTab/VBoxContainer4" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "Exit"
+
+[node name="GpTab" type="TabBar" parent="CanvasLayer/Panel/TabContainer"]
+visible = false
+layout_mode = 2
+focus_mode = 0
+tab_alignment = 2
+metadata/_tab_index = 2
+
+[node name="BroadcastContainer" type="HBoxContainer" parent="CanvasLayer/Panel/TabContainer/GpTab"]
+custom_minimum_size = Vector2(339, 30)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 56.0
+offset_right = 368.0
+offset_bottom = 92.0
+theme_override_constants/separation = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/GpTab/BroadcastContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -3
+alignment = 1
+
+[node name="BroadcastLabel" type="Label" parent="CanvasLayer/Panel/TabContainer/GpTab/BroadcastContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+text = "OPTION_BROADCAST_INTERVAL"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/GpTab/BroadcastContainer/VBoxContainer" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "Broadcast Interval"
+
+[node name="BroadcastOption" type="OptionButton" parent="CanvasLayer/Panel/TabContainer/GpTab/BroadcastContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_r0hkg")
+selected = 0
+item_count = 3
+popup/item_0/text = "BROADCAST_INTERVAL_STANDARD"
+popup/item_0/id = 0
+popup/item_1/text = "BROADCAST_INTERVAL_LONG"
+popup/item_1/id = 1
+popup/item_2/text = "BROADCAST_INTERVAL_OFF"
+popup/item_2/id = 2
+
+[node name="HintBubbleContainer" type="HBoxContainer" parent="CanvasLayer/Panel/TabContainer/GpTab"]
+custom_minimum_size = Vector2(339, 30)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 96.0
+offset_right = 368.0
+offset_bottom = 132.0
+theme_override_constants/separation = 47
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/GpTab/HintBubbleContainer"]
+layout_mode = 2
+theme_override_constants/separation = -3
+alignment = 1
+
+[node name="HintBubbleLabel" type="Label" parent="CanvasLayer/Panel/TabContainer/GpTab/HintBubbleContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+text = "OPTION_HINT_BUBBLE"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/GpTab/HintBubbleContainer/VBoxContainer" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "Failure Hint"
+
+[node name="HintBubbleToggle" type="CheckBox" parent="CanvasLayer/Panel/TabContainer/GpTab/HintBubbleContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme = ExtResource("3_r0hkg")
+alignment = 1
+
+[node name="CRTFilterContainer" type="HBoxContainer" parent="CanvasLayer/Panel/TabContainer/GpTab"]
+custom_minimum_size = Vector2(339, 30)
+layout_mode = 0
+offset_left = 29.0
+offset_top = 136.0
+offset_right = 368.0
+offset_bottom = 172.0
+theme_override_constants/separation = 47
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/GpTab/CRTFilterContainer"]
+layout_mode = 2
+theme_override_constants/separation = -3
+alignment = 1
+
+[node name="CRTFilterLabel" type="Label" parent="CanvasLayer/Panel/TabContainer/GpTab/CRTFilterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+text = "OPTION_CRT_FILTER"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/GpTab/CRTFilterContainer/VBoxContainer" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "CRT Filter"
+
+[node name="CRTFilterSlider" type="HSlider" parent="CanvasLayer/Panel/TabContainer/GpTab"]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 193.0
+offset_top = 142.0
+offset_right = 685.0
+offset_bottom = 192.0
+scale = Vector2(0.32, 0.32)
+size_flags_vertical = 4
+theme = ExtResource("3_r0hkg")
+max_value = 1.0
+step = 0.05
+value = 0.0
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="CanvasLayer/Panel/TabContainer/GpTab"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 265.0
+offset_right = 433.0
+offset_bottom = 302.0
+theme_override_constants/separation = -2
+
+[node name="Back" type="Button" parent="CanvasLayer/Panel/TabContainer/GpTab/VBoxContainer5" groups=["back"]]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_r0hkg")
+text = "OPTION_BACK"
+alignment = 0
+clip_text = true
+
+[node name="AutoShirinkComponent" parent="CanvasLayer/Panel/TabContainer/GpTab/VBoxContainer5/Back" instance=ExtResource("11_autoshrink")]
+max_font_size = 16
+min_font_size = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/TabContainer/GpTab/VBoxContainer5" groups=["OptionSmallText"]]
+layout_mode = 2
+theme = ExtResource("3_r0hkg")
+theme_override_colors/font_color = Color(0.235294, 0.227451, 0.211765, 1)
+theme_override_font_sizes/font_size = 10
+text = "Exit"
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -177.0
+offset_right = 118.0
+offset_bottom = -153.66666
+grow_horizontal = 2
+grow_vertical = 2
+text = "TAB_MOVE"
+label_settings = SubResource("LabelSettings_5ff7b")
+horizontal_alignment = 1
+script = ExtResource("10_padswap")
+
+[node name="PadUiIcon" type="TextureRect" parent="CanvasLayer/Panel/Label"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = -1.0000019
+offset_right = 148.0
+offset_bottom = 15.0
+texture = ExtResource("7_etlpc")
+script = ExtResource("8_fjq8l")
+metadata/_custom_type_script = "uid://nnjff5ms5xn6"
+
+[node name="PadUiIcon2" type="TextureRect" parent="CanvasLayer/Panel/Label"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -1.0000019
+offset_right = -1.0
+offset_bottom = 15.0
+texture = ExtResource("9_5kjos")
+script = ExtResource("8_fjq8l")
+metadata/_custom_type_script = "uid://nnjff5ms5xn6"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Panel"]
+libraries = {
+&"": SubResource("AnimationLibrary_udty3")
+}
+
+[node name="FontChangeComponent" parent="." node_paths=PackedStringArray("target_node") instance=ExtResource("8_ul5ae")]
+target_node = NodePath("..")
+
+[connection signal="item_selected" from="CanvasLayer/Panel/TabContainer/ScTab/LanguageContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Panel/TabContainer/ScTab/ResolutionContainer2/Resolution" to="." method="_on_resolution_item_selected"]
+[connection signal="toggled" from="CanvasLayer/Panel/TabContainer/ScTab/HBoxContainer/FullScreen" to="." method="_on_full_screen_toggled"]
+[connection signal="toggled" from="CanvasLayer/Panel/TabContainer/ScTab/LightingHBoxContainer/LightingQuality" to="." method="_on_lighting_toggled"]
+[connection signal="pressed" from="CanvasLayer/Panel/TabContainer/ScTab/VBoxContainer5/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/TabContainer/VoTab/VBoxContainer4/Back" to="." method="_on_back_pressed"]
+[connection signal="item_selected" from="CanvasLayer/Panel/TabContainer/GpTab/BroadcastContainer/BroadcastOption" to="." method="_on_broadcast_option_item_selected"]
+[connection signal="toggled" from="CanvasLayer/Panel/TabContainer/GpTab/HintBubbleContainer/HintBubbleToggle" to="." method="_on_hint_bubble_toggled"]
+[connection signal="value_changed" from="CanvasLayer/Panel/TabContainer/GpTab/CRTFilterSlider" to="." method="_on_crt_filter_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Panel/TabContainer/GpTab/VBoxContainer5/Back" to="." method="_on_back_pressed"]

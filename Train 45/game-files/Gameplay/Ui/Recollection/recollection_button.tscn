@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccx3jh2nagbkr"]
+
+[ext_resource type="Script" uid="uid://ckg7coyiufue" path="res://Gameplay/Ui/Recollection/recollection_button.gd" id="1_5k50h"]
+[ext_resource type="Texture2D" uid="uid://bxvu0yrfkmo3b" path="res://resources/ui/EventCoverImage/Hpreview_reina_0.png" id="2_1mqmi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yimn2"]
+bg_color = Color(0.67, 0.67, 0.67, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k50h"]
+bg_color = Color(0.7, 0.7, 0.7, 0.0941176)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5k50h"]
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1mqmi"]
+
+[node name="RecollectionButton" type="Button"]
+custom_minimum_size = Vector2(700, 400)
+offset_top = -29.0
+offset_right = 700.0
+offset_bottom = 371.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_yimn2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yimn2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5k50h")
+script = ExtResource("1_5k50h")
+
+[node name="EventTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = 15.0
+offset_right = -39.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1mqmi")
+expand_mode = 2
+
+[node name="HSceneTitleLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 47.0
+offset_top = 21.0
+offset_right = -388.0
+offset_bottom = -295.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.36, 2.36)
+text = "Scene_name"
+label_settings = SubResource("LabelSettings_5k50h")
+
+[node name="LockScreen" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 11.0
+offset_right = -22.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.219501, 0.219501, 0.219501, 1)
+
+[node name="Label" type="Label" parent="LockScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 286.0
+offset_top = 165.0
+offset_right = -287.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.24, 6.24)
+pivot_offset = Vector2(40, 25)
+text = "H_LOCKED"
+label_settings = SubResource("LabelSettings_1mqmi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

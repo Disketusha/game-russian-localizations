@@ -1,0 +1,1863 @@
+[gd_scene load_steps=104 format=3 uid="uid://bdlsbcr7y123"]
+
+[ext_resource type="Script" uid="uid://b2sjfymvdmcdu" path="res://route_map.gd" id="1_nwdgj"]
+[ext_resource type="PackedScene" uid="uid://c7tthty2e1w31" path="res://Gameplay/Ui/auto_shirink_component.tscn" id="1_autoshrink"]
+[ext_resource type="PackedScene" uid="uid://cf8ioa5lypkob" path="res://Gameplay/Ui/route_slot.tscn" id="2_bok4f"]
+[ext_resource type="PackedScene" uid="uid://bgy82kv6vful3" path="res://Gameplay/Ui/route_set_button.tscn" id="3_8mbc7"]
+[ext_resource type="Theme" uid="uid://btscey36vk310" path="res://resources/ui/SaveMenu/save_theme.tres" id="3_i3x7d"]
+[ext_resource type="Script" uid="uid://dyttgltny8v60" path="res://Gameplay/route_map_tutorial.gd" id="3_i7lny"]
+[ext_resource type="PackedScene" uid="uid://c6hlho66gl0fa" path="res://Gameplay/Ui/tutorial_rect.tscn" id="4_75v6w"]
+[ext_resource type="PackedScene" uid="uid://b7g5s4rnt7mtu" path="res://Gameplay/Ui/destination_rect.tscn" id="4_jjesy"]
+[ext_resource type="PackedScene" uid="uid://dfoj8l3p6ssk5" path="res://Gameplay/Sound/ui_sound_stream_player.tscn" id="5_dqii2"]
+[ext_resource type="PackedScene" uid="uid://bvddyffn8losd" path="res://scene/blur_bg.tscn" id="5_kx8tj"]
+[ext_resource type="Script" uid="uid://dnng0xr4v6w4a" path="res://Gameplay/hint_panel.gd" id="6_tbs2s"]
+[ext_resource type="Shader" uid="uid://b4r8ieon6y1p" path="res://Gameplay/kankan_off_screen.gdshader" id="6_ubxi3"]
+[ext_resource type="PackedScene" uid="uid://c5wpqgdsithn7" path="res://Gameplay/GameData/RouteHint/hint_slot.tscn" id="7_7sl3g"]
+[ext_resource type="Texture2D" uid="uid://bpm4gwl3aaku1" path="res://resources/ui/gui/KanKanNavi/kankan_base.png" id="7_8mbc7"]
+[ext_resource type="Texture2D" uid="uid://22gbgmbp20ic" path="res://resources/ui/gui/KanKanNavi/kankan_screen.png" id="8_bmm6t"]
+[ext_resource type="Texture2D" uid="uid://bbr5o0n3tpwgd" path="res://resources/ui/gui/KanKanNavi/kankan_title.png" id="9_jjesy"]
+[ext_resource type="Shader" uid="uid://cg7nu4xf20dlk" path="res://Gameplay/kankan_bg.gdshader" id="9_ufau3"]
+[ext_resource type="Script" uid="uid://bdrx0pxhjbjn0" path="res://Gameplay/kankan_title_rect.gd" id="10_63yw7"]
+[ext_resource type="Texture2D" uid="uid://du1ts3qx80601" path="res://resources/ui/gui/KanKanNavi/set_route_line.png" id="12_63yw7"]
+[ext_resource type="LabelSettings" uid="uid://ci4mla4tgkvtc" path="res://Gameplay/Themes/route_map_description_font.tres" id="13_8mbc7"]
+[ext_resource type="Texture2D" uid="uid://su0njg1aer0y" path="res://resources/ui/icons/icons25.png" id="14_6lull"]
+[ext_resource type="Script" uid="uid://npjogymaxg5b" path="res://Gameplay/kankan_description_label.gd" id="14_wnf03"]
+[ext_resource type="Texture2D" uid="uid://ny6j26f7eigm" path="res://resources/ui/gui/KanKanNavi/kankan_button.png" id="15_4fck6"]
+[ext_resource type="Texture2D" uid="uid://cbj5r5uujjg3o" path="res://resources/ui/icons/icons25white.png" id="15_y81fe"]
+[ext_resource type="Texture2D" uid="uid://c6kymw3oypc4r" path="res://resources/ui/gui/KanKanNavi/route_clear_button.png" id="16_jcxwi"]
+[ext_resource type="Texture2D" uid="uid://bme1x1b8iu6y4" path="res://resources/ui/gui/KanKanNavi/route_comfirm_button.png" id="17_4joh3"]
+[ext_resource type="Script" uid="uid://c5f0x1mfcjsm1" path="res://Gameplay/AutoShrinkLabel.gd" id="18_bn0mq"]
+[ext_resource type="Texture2D" uid="uid://blcj4q3ufvxrw" path="res://resources/ui/gui/KanKanNavi/confirm_bubble.png" id="18_jjesy"]
+[ext_resource type="Texture2D" uid="uid://c5dv2njyhfl01" path="res://resources/ui/icons/sd_icon/reina.png" id="19_65vry"]
+[ext_resource type="Shader" uid="uid://bxwds3tmnvnf4" path="res://Gameplay/NPC/vignette.gdshader" id="19_slvqt"]
+[ext_resource type="Script" uid="uid://cyqj146nhkfx0" path="res://Gameplay/kankan_confirm_bubble.gd" id="19_ufau3"]
+[ext_resource type="Shader" uid="uid://cka8r7f4nprv0" path="res://Gameplay/load_menu.gdshader" id="20_4xjgo"]
+[ext_resource type="PackedScene" uid="uid://bj1jpntptaqij" path="res://Gameplay/Sound/button_stream_player_component.tscn" id="20_r28ld"]
+[ext_resource type="AudioStream" uid="uid://bgnqkv4jnyrgm" path="res://sound/sfx/ui/kankan_route_all_clear.wav" id="21_4v2o3"]
+[ext_resource type="AudioStream" uid="uid://oefb846j72lr" path="res://sound/sfx/ui/kankan_setting_confirm.wav" id="23_dqii2"]
+[ext_resource type="AudioStream" uid="uid://bitv685fav1cx" path="res://sound/sfx/ui/kankan_another_button_focus.wav" id="23_qakya"]
+[ext_resource type="Texture2D" uid="uid://d61mfdgypfjn" path="res://resources/ui/controller_icons/xbox-B.png" id="24_gxsiu"]
+[ext_resource type="Script" uid="uid://nnjff5ms5xn6" path="res://scene/component/controller_button_component.gd" id="25_kxscr"]
+[ext_resource type="Texture2D" uid="uid://dfwm6piy1cnk3" path="res://resources/ui/controller_icons/xbox-Y.png" id="26_2nlap"]
+[ext_resource type="Texture2D" uid="uid://ddf8dwkp4gvuy" path="res://resources/ui/gui/KanKanNavi/hint_panel.png" id="27_slvqt"]
+[ext_resource type="Texture2D" uid="uid://d0jfdqamre738" path="res://resources/ui/gui/KanKanNavi/hint_back_hover.png" id="29_4xjgo"]
+[ext_resource type="Script" uid="uid://b6jfm02lhverw" path="res://Gameplay/hint_blank_container.gd" id="29_8khu0"]
+[ext_resource type="Texture2D" uid="uid://cyxfrgdatwba" path="res://resources/ui/controller_icons/xbox-RT-16.png" id="29_gxsiu"]
+[ext_resource type="Script" uid="uid://dya7lkfts42wj" path="res://Gameplay/kankna_hint_info.gd" id="29_yant8"]
+[ext_resource type="PackedScene" uid="uid://d1w8ff2ouxdp0" path="res://Gameplay/Ui/hint_blank_guide.tscn" id="30_qqjb8"]
+[ext_resource type="Texture2D" uid="uid://dbh225j43jclc" path="res://resources/ui/gui/KanKanNavi/hint_back.png" id="30_yant8"]
+[ext_resource type="Texture2D" uid="uid://bniwilpsrfm6c" path="res://resources/ui/gui/KanKanNavi/hint_back_pressed.png" id="31_13wom"]
+[ext_resource type="Texture2D" uid="uid://c47alptoabaor" path="res://resources/ui/gui/KanKanNavi/set_route_rect.png" id="31_v4i7l"]
+[ext_resource type="Texture2D" uid="uid://bkqohak5o6pph" path="res://resources/ui/controller_icons/xbox-X.png" id="32_bwuc8"]
+[ext_resource type="Script" uid="uid://v2kv8ek0jq7c" path="res://Gameplay/GameData/RouteHint/route_hint.gd" id="32_karv2"]
+[ext_resource type="Resource" uid="uid://bpucglvjfhhqp" path="res://Gameplay/GameData/RouteHint/hint_dark_room.tres" id="33_u7nh5"]
+[ext_resource type="Resource" uid="uid://blgh6c2wvdyj4" path="res://Gameplay/GameData/RouteHint/hint_engine_room.tres" id="34_65vry"]
+[ext_resource type="Resource" uid="uid://bw7u8ypt8xqfi" path="res://Gameplay/GameData/RouteHint/hint_ghost.tres" id="35_ym1eo"]
+[ext_resource type="Resource" uid="uid://c1u4k7rivoyg0" path="res://Gameplay/GameData/RouteHint/hint_handfan.tres" id="36_m2rot"]
+[ext_resource type="Resource" uid="uid://delthfvom2vu4" path="res://Gameplay/GameData/RouteHint/hint_onsen.tres" id="37_2gtjk"]
+[ext_resource type="Resource" uid="uid://6n1uj3jkj6x4" path="res://Gameplay/GameData/RouteHint/hint_roullet.tres" id="38_6lull"]
+[ext_resource type="Resource" uid="uid://bsy0kdhj1ltjc" path="res://Gameplay/GameData/RouteHint/hint_storage.tres" id="39_y81fe"]
+[ext_resource type="Resource" uid="uid://cns2x70l2y0kg" path="res://Gameplay/GameData/RouteHint/hint_stuckdoor.tres" id="40_64c73"]
+[ext_resource type="PackedScene" uid="uid://rye76hy4dovq" path="res://scene/UI/confirm_box.tscn" id="48_u7nh5"]
+[ext_resource type="Theme" uid="uid://buswwhu1hjomu" path="res://resources/theme/scroll_bar.tres" id="48_v4i7l"]
+[ext_resource type="Script" uid="uid://c3g1m5jegw5uj" path="res://Gameplay/pin_hint_panel.gd" id="50_ym1eo"]
+[ext_resource type="Texture2D" uid="uid://duc5u270l488t" path="res://resources/ui/icons/icons_large3.png" id="51_m2rot"]
+[ext_resource type="PackedScene" uid="uid://cvorrprxskobm" path="res://Gameplay/font_change_component.tscn" id="54_y81fe"]
+[ext_resource type="Script" uid="uid://bdxbtw4laj61s" path="res://scene/component/kb_ui_label.gd" id="55_kbbadge"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63yw7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4fck6"]
+shader = ExtResource("6_ubxi3")
+shader_parameter/progress = 0.0
+shader_parameter/multiplier = 2.636
+shader_parameter/angle = 228.571
+shader_parameter/anchor = Vector2(0.5, 0.5)
+shader_parameter/anchorOffset = 1.0
+shader_parameter/diamondPixelSize = 40.0
+
+[sub_resource type="Animation" id="Animation_4joh3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BaseRect/KanKanScreen/OffScreen:material")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ShaderMaterial_4fck6")]
+}
+
+[sub_resource type="Animation" id="Animation_jcxwi"]
+resource_name = "in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(0.189465, 1),
+"update": 0,
+"values": [Vector2(0, 277), Vector2(0, -50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BaseRect/KanKanScreen/OffScreen:material:shader_parameter/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.466667, 1.86667),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.03333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_kankan_on"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ubxi3"]
+resource_name = "out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5),
+"transitions": PackedFloat32Array(4.43828, 0.189465),
+"update": 0,
+"values": [Vector2(0, -50), Vector2(0, 277)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"route_exit"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qxgds"]
+_data = {
+&"RESET": SubResource("Animation_4joh3"),
+&"in": SubResource("Animation_jcxwi"),
+&"out": SubResource("Animation_ubxi3")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jjesy"]
+shader = ExtResource("9_ufau3")
+shader_parameter/spin_rotation_speed = 2.0
+shader_parameter/move_speed = 7.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/colour_1 = Color(0.87, 0.2349, 0.46777, 0.305882)
+shader_parameter/colour_2 = Color(0.71, 0.343167, 0, 0.235294)
+shader_parameter/colour_3 = Color(0.48, 0.2996, 0.2832, 0.231373)
+shader_parameter/contrast = 3.5
+shader_parameter/lighting = 0.4
+shader_parameter/spin_amount = 0.25
+shader_parameter/pixel_filter = 740.0
+shader_parameter/is_rotating = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_u7nh5"]
+shadow_color = Color(0, 0, 0, 0.513726)
+
+[sub_resource type="LabelSettings" id="LabelSettings_64c73"]
+shadow_color = Color(0, 0, 0, 0.513726)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lull"]
+bg_color = Color(0.88, 0.7546, 0.044, 1)
+border_color = Color(0.806152, 0.538574, 0.093811, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xf433"]
+bg_color = Color(0.88, 0.84172, 0.6248, 1)
+border_color = Color(0.806152, 0.538574, 0.093811, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqjb8"]
+bg_color = Color(0.52, 0.4459, 0.026, 1)
+border_color = Color(0.806152, 0.538574, 0.093811, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y81fe"]
+bg_color = Color(0.32, 0.32, 0.32, 0)
+border_width_left = 20
+border_width_right = 20
+border_color = Color(0.0926708, 0.0810523, 0.081052, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_xf433"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_6lull")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_xf433")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_qqjb8")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_y81fe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dqii2"]
+texture = ExtResource("15_4fck6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4xjgo"]
+texture = ExtResource("15_4fck6")
+modulate_color = Color(0.631424, 0.631424, 0.631424, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xf433"]
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_63yw7"]
+texture = ExtResource("15_4fck6")
+modulate_color = Color(0.771443, 0.771443, 0.771443, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kx8tj"]
+texture = ExtResource("15_4fck6")
+modulate_color = Color(0.59891, 0.59891, 0.59891, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e5c5j"]
+texture = ExtResource("16_jcxwi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8mbc7"]
+texture = ExtResource("16_jcxwi")
+modulate_color = Color(0.673636, 0.673636, 0.673635, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oegpp"]
+line_spacing = 0.0
+font_color = Color(0.176471, 0.14902, 0.14902, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hqmyf"]
+texture = ExtResource("17_4joh3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bmm6t"]
+texture = ExtResource("17_4joh3")
+modulate_color = Color(0.718679, 0.718679, 0.718679, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjesy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jd7qs"]
+shader = ExtResource("19_slvqt")
+shader_parameter/vignette_intensity = 0.09
+shader_parameter/vignette_opacity = 0.678
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_karv2"]
+shader = ExtResource("20_4xjgo")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.098
+shader_parameter/resolution = Vector2(640, 360)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 7.83
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 1.615
+shader_parameter/distort_intensity = 0.014
+shader_parameter/noise_opacity = 0.051
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.028
+shader_parameter/aberration = 0.00100005
+shader_parameter/brightness = 1.3
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.028
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.29
+shader_parameter/vignette_opacity = 0.306
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jcxwi"]
+
+[sub_resource type="Resource" id="Resource_64c73"]
+script = ExtResource("32_karv2")
+id = "cat"
+title = "전차 점검 보고서 -3-"
+description = "'전차 하부 틈새로 고양이가 들어가 감전당하는 사고 수차례 발생'
+'외부 차단막 설치 -보류'
+'설비 점검 -보류'
+'사고 이력 조회 -자료 없음'
+'메모 - 당직 인원 부족으로 전체 칸 점검 불가. 사고 지점인 7번, 13번, 21번, 24번 칸 우선 점검 후 보고'"
+metadata/_custom_type_script = "uid://v2kv8ek0jq7c"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4v2o3"]
+texture = ExtResource("30_yant8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yvtij"]
+texture = ExtResource("31_13wom")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r28ld"]
+texture = ExtResource("29_4xjgo")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64c73"]
+bg_color = Color(0, 0, 0, 0.976471)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2gtjk"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_y81fe"]
+line_spacing = 0.0
+font_size = 7
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8khu0"]
+line_spacing = -1.0
+font_size = 5
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kxscr"]
+line_spacing = -1.0
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gxsiu"]
+line_spacing = -1.0
+font_size = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_2nlap"]
+font_size = 9
+
+[node name="RouteMap" type="Control" node_paths=PackedStringArray("route_hint", "confirm_box")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nwdgj")
+route_slot = ExtResource("2_bok4f")
+route_set_scene = ExtResource("3_8mbc7")
+destination_rect = ExtResource("4_jjesy")
+route_hint = NodePath("HintPanel")
+confirm_box = NodePath("ConfirmBox")
+
+[node name="RouteMapStreamPlayer" parent="." instance=ExtResource("5_dqii2")]
+
+[node name="ScreenBlurRect" parent="." instance=ExtResource("5_kx8tj")]
+layout_mode = 1
+
+[node name="KanKanNavi" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.875, 0.875)
+pivot_offset = Vector2(320, 180)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_63yw7")
+
+[node name="KanKanAnim" type="AnimationPlayer" parent="KanKanNavi"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_qxgds")
+}
+
+[node name="BaseRect" type="TextureRect" parent="KanKanNavi"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 32.0
+offset_right = 3619.0
+offset_bottom = 1803.0
+scale = Vector2(0.167, 0.167)
+texture = ExtResource("7_8mbc7")
+
+[node name="KanKanScreen" type="TextureRect" parent="KanKanNavi/BaseRect"]
+clip_children = 2
+layout_mode = 0
+offset_left = 248.0
+offset_top = 90.0
+offset_right = 3516.0
+offset_bottom = 1695.0
+texture = ExtResource("8_bmm6t")
+
+[node name="ColorRect" type="ColorRect" parent="KanKanNavi/BaseRect/KanKanScreen"]
+material = SubResource("ShaderMaterial_jjesy")
+layout_mode = 0
+offset_left = -8.0
+offset_right = 3285.0
+offset_bottom = 1617.0
+
+[node name="DescriptionLabel" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 27.0
+offset_top = 407.0
+offset_right = 328.0
+offset_bottom = 544.0
+scale = Vector2(3.85, 3.85)
+text = "이상현상의 설명이 들어갑니다"
+label_settings = ExtResource("13_8mbc7")
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 1
+script = ExtResource("14_wnf03")
+
+[node name="MyTicketLabel" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -319.0
+offset_right = 578.0
+offset_bottom = 144.0
+grow_horizontal = 2
+text = "TICKET_NUM"
+label_settings = SubResource("LabelSettings_u7nh5")
+vertical_alignment = 1
+autowrap_mode = 1
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="CoinIcon" type="TextureRect" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1315.0
+offset_top = 34.1154
+offset_right = 1438.0
+offset_bottom = 157.115
+texture = ExtResource("14_6lull")
+
+[node name="CoinIconBack" type="TextureRect" parent="KanKanNavi/BaseRect/KanKanScreen/CoinIcon"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -8.0
+offset_top = -7.99994
+offset_right = 130.0
+offset_bottom = 130.0
+texture = ExtResource("15_y81fe")
+
+[node name="MyCoinLabel" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.468
+anchor_right = 0.5
+anchor_bottom = 0.468
+offset_left = -175.0
+offset_top = -721.14
+offset_right = -110.0
+offset_bottom = -692.14
+grow_horizontal = 2
+scale = Vector2(5.65355, 5.65355)
+text = "x99"
+label_settings = SubResource("LabelSettings_u7nh5")
+vertical_alignment = 1
+autowrap_mode = 1
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="TitleRect" type="TextureRect" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -106.0
+offset_top = -221.0
+offset_right = 1151.0
+offset_bottom = 396.0
+texture = ExtResource("9_jjesy")
+script = ExtResource("10_63yw7")
+
+[node name="RouteNameLable" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen/TitleRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 113.774
+offset_top = 44.9123
+offset_right = 323.774
+offset_bottom = 70.9123
+grow_vertical = 2
+rotation = -0.15667
+scale = Vector2(4.855, 4.855)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "asdaaaaaaaaaaaaaaa"
+vertical_alignment = 2
+autowrap_mode = 1
+script = ExtResource("18_bn0mq")
+
+[node name="RouteLineRect" type="TextureRect" parent="KanKanNavi/BaseRect/KanKanScreen"]
+layout_mode = 0
+offset_left = -218.06
+offset_top = 1233.35
+offset_right = 3413.94
+offset_bottom = 1549.35
+texture = ExtResource("12_63yw7")
+
+[node name="UnlockContainer" type="HBoxContainer" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016
+anchor_top = 0.609
+anchor_right = 0.349
+anchor_bottom = 0.737
+offset_left = -6.8748283
+offset_top = 40.339417
+offset_right = -875.98663
+offset_bottom = -130.75635
+scale = Vector2(5.106074, 5.106074)
+alignment = 1
+
+[node name="UnlockTicketLabel" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen/UnlockContainer"]
+layout_mode = 2
+theme = ExtResource("3_i3x7d")
+text = "ROUTE_APP_NEED_COIN"
+label_settings = SubResource("LabelSettings_64c73")
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="KanKanNavi/BaseRect/KanKanScreen/UnlockContainer"]
+layout_mode = 2
+texture = ExtResource("14_6lull")
+expand_mode = 2
+
+[node name="UnlockTicketCountLabel" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen/UnlockContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_i3x7d")
+text = "1000장"
+label_settings = SubResource("LabelSettings_64c73")
+vertical_alignment = 1
+
+[node name="EventInfoContainer" type="HBoxContainer" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016
+anchor_top = 0.609
+anchor_right = 0.349
+anchor_bottom = 0.737
+offset_left = -44.5138
+offset_top = -16.9745
+offset_right = -868.758
+offset_bottom = -162.414
+scale = Vector2(4.415, 4.415)
+alignment = 1
+
+[node name="EventPartnerTexture" type="TextureRect" parent="KanKanNavi/BaseRect/KanKanScreen/EventInfoContainer"]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 2
+texture = ExtResource("19_65vry")
+expand_mode = 2
+
+[node name="EventNameLabel" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen/EventInfoContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("3_i3x7d")
+text = "이벤트 이름"
+label_settings = SubResource("LabelSettings_64c73")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1261.0
+offset_top = 185.0
+offset_right = 3219.0
+offset_bottom = 1150.0
+theme = SubResource("Theme_xf433")
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 50
+
+[node name="RouteContainer" type="GridContainer" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 50
+columns = 5
+
+[node name="Button" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button2" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button3" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button4" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button5" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button6" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button7" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button8" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button9" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button10" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button11" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button12" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button13" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button14" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button15" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Button16" parent="KanKanNavi/BaseRect/KanKanScreen/ScrollContainer/MarginContainer/RouteContainer" instance=ExtResource("2_bok4f")]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2925.65
+offset_top = 41.7365
+offset_right = 3209.65
+offset_bottom = 148.737
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_dqii2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4xjgo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4xjgo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4xjgo")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_4xjgo")
+theme_override_styles/focus = SubResource("StyleBoxTexture_4xjgo")
+
+[node name="Label" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen/Exit"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -308.806
+offset_top = -132.663
+offset_right = -145.806
+offset_bottom = -91.6634
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3.737, 3.737)
+text = "ROUTE_APP_EXIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonStreamPlayerComponent" parent="KanKanNavi/BaseRect/KanKanScreen/Exit" instance=ExtResource("20_r28ld")]
+focus = Array[AudioStream]([ExtResource("23_qakya")])
+
+[node name="PadUiIcon" type="TextureRect" parent="KanKanNavi/BaseRect/KanKanScreen/Exit"]
+layout_mode = 0
+offset_left = 236.958
+offset_top = -11.976
+offset_right = 251.958
+offset_bottom = 3.02398
+scale = Vector2(4, 4)
+texture = ExtResource("24_gxsiu")
+expand_mode = 1
+script = ExtResource("25_kxscr")
+metadata/_custom_type_script = "uid://nnjff5ms5xn6"
+
+[node name="Label4" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen/Exit"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 81.270615
+offset_top = -50.541946
+offset_right = 96.270615
+offset_bottom = -26.541946
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3.18977, 3.18977)
+text = "E"
+label_settings = SubResource("LabelSettings_xf433")
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("55_kbbadge")
+
+[node name="Hint" type="Button" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2632.24
+offset_top = 41.7365
+offset_right = 2916.24
+offset_bottom = 148.737
+theme_override_styles/normal = SubResource("StyleBoxTexture_dqii2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_63yw7")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_kx8tj")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kx8tj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KanKanNavi/BaseRect/KanKanScreen/Hint"]
+layout_mode = 0
+offset_left = -174.50854
+offset_top = -11.975983
+offset_right = -134.50854
+offset_bottom = 28.024017
+
+[node name="Label" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen/Hint"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -316.5085
+offset_top = -118.97652
+offset_right = -143.50851
+offset_bottom = -82.97601
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3.73745, 3.73745)
+text = "ROUTE_APP_HINT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonStreamPlayerComponent" parent="KanKanNavi/BaseRect/KanKanScreen/Hint" instance=ExtResource("20_r28ld")]
+focus = Array[AudioStream]([ExtResource("23_qakya")])
+
+[node name="PadUiIcon" type="TextureRect" parent="KanKanNavi/BaseRect/KanKanScreen/Hint"]
+layout_mode = 0
+offset_left = 229.255
+offset_top = -11.976
+offset_right = 244.255
+offset_bottom = 3.02398
+scale = Vector2(4, 4)
+texture = ExtResource("26_2nlap")
+expand_mode = 1
+script = ExtResource("25_kxscr")
+metadata/_custom_type_script = "uid://nnjff5ms5xn6"
+
+[node name="Label3" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen/Hint"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 80.411896
+offset_top = -50.54193
+offset_right = 95.411896
+offset_bottom = -26.541931
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3.18977, 3.18977)
+text = "Q"
+label_settings = SubResource("LabelSettings_xf433")
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("55_kbbadge")
+
+[node name="RouteClearButton" type="Button" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2835.83
+offset_top = 1173.47
+offset_right = 3248.83
+offset_bottom = 1306.47
+theme_override_styles/normal = SubResource("StyleBoxTexture_e5c5j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8mbc7")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_e5c5j")
+theme_override_styles/focus = SubResource("StyleBoxTexture_8mbc7")
+
+[node name="Label" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen/RouteClearButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.7516
+offset_top = 69.517
+offset_right = 163.248
+offset_bottom = 202.517
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.28486, 4.28486)
+pivot_offset = Vector2(122, 110)
+text = "ROUTE_APP_ROUTE_CLEAR"
+label_settings = SubResource("LabelSettings_oegpp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonStreamPlayerComponent" parent="KanKanNavi/BaseRect/KanKanScreen/RouteClearButton" instance=ExtResource("20_r28ld")]
+focus = Array[AudioStream]([ExtResource("23_qakya")])
+pressed = Array[AudioStream]([ExtResource("21_4v2o3")])
+
+[node name="Label3" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen/RouteClearButton"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -221.895
+offset_top = -58.5742
+offset_right = -206.895
+offset_bottom = -34.5742
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3.18977, 3.18977)
+text = "R"
+label_settings = SubResource("LabelSettings_xf433")
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("55_kbbadge")
+
+[node name="PadUiIcon" type="TextureRect" parent="KanKanNavi/BaseRect/KanKanScreen/RouteClearButton/Label3"]
+layout_mode = 0
+offset_left = -13.945465
+offset_top = -1.335144e-05
+offset_right = 11.418184
+offset_bottom = 20.2909
+texture = ExtResource("29_gxsiu")
+script = ExtResource("25_kxscr")
+metadata/_custom_type_script = "uid://nnjff5ms5xn6"
+
+[node name="RouteStart" type="Button" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2835.83
+offset_top = 1323.17
+offset_right = 3248.83
+offset_bottom = 1536.17
+theme_override_styles/normal = SubResource("StyleBoxTexture_hqmyf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bmm6t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bmm6t")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_bmm6t")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_bmm6t")
+theme_override_styles/focus = SubResource("StyleBoxTexture_bmm6t")
+
+[node name="Label" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen/RouteStart"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -413.512
+offset_top = -85.9658
+offset_right = -169.512
+offset_bottom = -58.9658
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.73738, 3.73738)
+text = "ROUTE_APP_CONFIRM_ROUTE"
+label_settings = SubResource("LabelSettings_oegpp")
+horizontal_alignment = 1
+
+[node name="ButtonStreamPlayerComponent" parent="KanKanNavi/BaseRect/KanKanScreen/RouteStart" instance=ExtResource("20_r28ld")]
+focus = Array[AudioStream]([ExtResource("23_qakya")])
+pressed = Array[AudioStream]([ExtResource("23_dqii2")])
+
+[node name="Label2" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen/RouteStart"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.113
+offset_top = -69.2838
+offset_right = -215.113
+offset_bottom = -45.2838
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3.19, 3.19)
+text = "Shift"
+label_settings = SubResource("LabelSettings_xf433")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("55_kbbadge")
+
+[node name="PadUiIcon" type="TextureRect" parent="KanKanNavi/BaseRect/KanKanScreen/RouteStart/Label2"]
+layout_mode = 0
+offset_left = -2.1451206
+offset_top = 0.000106334686
+offset_right = 17.145372
+offset_bottom = 19.290615
+texture = ExtResource("32_bwuc8")
+expand_mode = 1
+script = ExtResource("25_kxscr")
+metadata/_custom_type_script = "uid://nnjff5ms5xn6"
+
+[node name="HintBlankContainer" type="HBoxContainer" parent="KanKanNavi/BaseRect/KanKanScreen"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 1239.34
+offset_right = 386.0
+offset_bottom = 1540.34
+theme_override_constants/separation = -40
+script = ExtResource("29_8khu0")
+
+[node name="HintBlankGuide" parent="KanKanNavi/BaseRect/KanKanScreen/HintBlankContainer" instance=ExtResource("30_qqjb8")]
+visible = false
+layout_mode = 2
+
+[node name="HintBlankGuide2" parent="KanKanNavi/BaseRect/KanKanScreen/HintBlankContainer" instance=ExtResource("30_qqjb8")]
+visible = false
+layout_mode = 2
+
+[node name="HintBlankGuide3" parent="KanKanNavi/BaseRect/KanKanScreen/HintBlankContainer" instance=ExtResource("30_qqjb8")]
+visible = false
+layout_mode = 2
+
+[node name="HintBlankGuide4" parent="KanKanNavi/BaseRect/KanKanScreen/HintBlankContainer" instance=ExtResource("30_qqjb8")]
+visible = false
+layout_mode = 2
+
+[node name="HintBlankGuide5" parent="KanKanNavi/BaseRect/KanKanScreen/HintBlankContainer" instance=ExtResource("30_qqjb8")]
+visible = false
+layout_mode = 2
+
+[node name="HintBlankGuide6" parent="KanKanNavi/BaseRect/KanKanScreen/HintBlankContainer" instance=ExtResource("30_qqjb8")]
+visible = false
+layout_mode = 2
+
+[node name="RouteSetContainer" type="HBoxContainer" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 63.0
+offset_top = -365.659
+offset_right = 2219.0
+offset_bottom = -64.6587
+grow_vertical = 0
+theme_override_constants/separation = -40
+
+[node name="RouteSetButton" parent="KanKanNavi/BaseRect/KanKanScreen/RouteSetContainer" instance=ExtResource("3_8mbc7")]
+layout_mode = 2
+
+[node name="DestinationContainer" type="Panel" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2147.21
+offset_top = 1209.4
+offset_right = 2554.21
+offset_bottom = 1572.4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jjesy")
+
+[node name="ConfirmBubble" type="TextureRect" parent="KanKanNavi/BaseRect/KanKanScreen" node_paths=PackedStringArray("route_map")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -900.0
+offset_top = -110.0
+offset_right = 900.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(900, 110)
+texture = ExtResource("18_jjesy")
+script = ExtResource("19_ufau3")
+route_map = NodePath("../../../..")
+
+[node name="Label" type="Label" parent="KanKanNavi/BaseRect/KanKanScreen/ConfirmBubble"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -12.0
+offset_right = 95.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.65352, 5.65352)
+pivot_offset = Vector2(97.5166, 12.571)
+text = "노선 설정을 완료하였습니다."
+horizontal_alignment = 1
+
+[node name="OffScreen" type="ColorRect" parent="KanKanNavi/BaseRect/KanKanScreen"]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_4fck6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0986974, 0.0102228, 0.0287019, 1)
+metadata/_edit_lock_ = true
+
+[node name="Vignette" type="ColorRect" parent="KanKanNavi/BaseRect/KanKanScreen"]
+material = SubResource("ShaderMaterial_jd7qs")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="VHS" type="ColorRect" parent="KanKanNavi"]
+material = SubResource("ShaderMaterial_karv2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 47.0
+offset_right = -33.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="HintPanel" type="Panel" parent="." node_paths=PackedStringArray("hint_pint_panel", "VHS")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -227.0
+offset_top = -167.0
+offset_right = 238.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.88, 0.88)
+pivot_offset = Vector2(232, 121)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jcxwi")
+script = ExtResource("6_tbs2s")
+hint_slot = ExtResource("7_7sl3g")
+hint_pint_panel = NodePath("../PinHintPanel")
+VHS = NodePath("../KanKanNavi/VHS")
+debug_hint_list = Array[Resource]([SubResource("Resource_64c73"), ExtResource("33_u7nh5"), ExtResource("34_65vry"), ExtResource("35_ym1eo"), ExtResource("36_m2rot"), ExtResource("37_2gtjk"), ExtResource("38_6lull"), ExtResource("39_y81fe"), ExtResource("40_64c73")])
+
+[node name="DarkScreen" type="ColorRect" parent="HintPanel"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = -19.0
+offset_right = 514.0
+offset_bottom = 250.0
+color = Color(0, 0, 0, 0.709804)
+
+[node name="HintScreen" type="TextureRect" parent="HintPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -854.0
+offset_top = -450.0
+offset_right = 854.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.275, 0.275)
+pivot_offset = Vector2(854, 450)
+texture = ExtResource("27_slvqt")
+
+[node name="MarginContainer" type="MarginContainer" parent="HintPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.00004
+offset_top = 18.0
+offset_right = 1324.0
+offset_bottom = 620.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HintPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="HintScrollContainer" type="ScrollContainer" parent="HintPanel/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("48_v4i7l")
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="HintSlotContainer" type="VBoxContainer" parent="HintPanel/MarginContainer/HBoxContainer/HintScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="HintSlot" parent="HintPanel/MarginContainer/HBoxContainer/HintScrollContainer/HintSlotContainer" instance=ExtResource("7_7sl3g")]
+layout_mode = 2
+
+[node name="HintSlot2" parent="HintPanel/MarginContainer/HBoxContainer/HintScrollContainer/HintSlotContainer" instance=ExtResource("7_7sl3g")]
+layout_mode = 2
+
+[node name="HintSlot4" parent="HintPanel/MarginContainer/HBoxContainer/HintScrollContainer/HintSlotContainer" instance=ExtResource("7_7sl3g")]
+layout_mode = 2
+
+[node name="HintSlot5" parent="HintPanel/MarginContainer/HBoxContainer/HintScrollContainer/HintSlotContainer" instance=ExtResource("7_7sl3g")]
+layout_mode = 2
+
+[node name="HintSlot3" parent="HintPanel/MarginContainer/HBoxContainer/HintScrollContainer/HintSlotContainer" instance=ExtResource("7_7sl3g")]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="HintPanel" groups=["KanKanHintPanel"]]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -62.0
+offset_top = -12.0
+offset_right = 6.0
+offset_bottom = 17.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_4v2o3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yvtij")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r28ld")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_yvtij")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_4v2o3")
+theme_override_styles/focus = SubResource("StyleBoxTexture_r28ld")
+
+[node name="HintInfoPanel" type="Panel" parent="HintPanel" node_paths=PackedStringArray("pin_hint_panel", "scroll", "hint_blank_container", "hint_blank_container_info")]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = -21.0455
+offset_right = 447.0
+offset_bottom = 363.955
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_64c73")
+script = ExtResource("29_yant8")
+pin_hint_panel = NodePath("../../PinHintPanel")
+scroll = NodePath("ScrollContainer")
+hint_blank_container = NodePath("../../KanKanNavi/BaseRect/KanKanScreen/HintBlankContainer")
+hint_blank_container_info = NodePath("HintBlankContainerInfo")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HintPanel/HintInfoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 44.0
+offset_right = -9.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HintPanel/HintInfoPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="HintInfoTexture" type="TextureRect" parent="HintPanel/HintInfoPanel/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+stretch_mode = 5
+
+[node name="HintInfoLabel" type="RichTextLabel" parent="HintPanel/HintInfoPanel/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(370, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+fit_content = true
+
+[node name="HintInfoPinButton" type="Button" parent="HintPanel/HintInfoPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.065
+offset_top = 4.1948
+offset_right = -82.0649
+offset_bottom = 33.1948
+grow_horizontal = 0
+focus_neighbor_left = NodePath("../HintInfoBackButton")
+focus_neighbor_top = NodePath("../HintInfoBackButton")
+focus_neighbor_right = NodePath("../HintInfoBackButton")
+focus_neighbor_bottom = NodePath("../HintInfoBackButton")
+focus_next = NodePath("../HintInfoBackButton")
+focus_previous = NodePath("../HintInfoBackButton")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4v2o3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yvtij")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r28ld")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_yvtij")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_4v2o3")
+theme_override_styles/focus = SubResource("StyleBoxTexture_r28ld")
+
+[node name="ColorRect" type="ColorRect" parent="HintPanel/HintInfoPanel/HintInfoPinButton"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 61.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+
+[node name="Label" type="Label" parent="HintPanel/HintInfoPanel/HintInfoPinButton/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ROUTE_HINT_PINNED"
+label_settings = SubResource("LabelSettings_2gtjk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AutoShirinkComponent" parent="HintPanel/HintInfoPanel/HintInfoPinButton/ColorRect/Label" instance=ExtResource("1_autoshrink")]
+max_font_size = 10
+min_font_size = 6
+
+[node name="HintInfoBackButton" type="Button" parent="HintPanel/HintInfoPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -73.4416
+offset_top = 4.1948
+offset_right = -5.44156
+offset_bottom = 33.1948
+grow_horizontal = 0
+focus_neighbor_left = NodePath("../HintInfoPinButton")
+focus_neighbor_top = NodePath("../HintInfoPinButton")
+focus_neighbor_right = NodePath("../HintInfoPinButton")
+focus_neighbor_bottom = NodePath("../HintInfoPinButton")
+focus_next = NodePath("../HintInfoPinButton")
+focus_previous = NodePath("../HintInfoPinButton")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4v2o3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yvtij")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r28ld")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_yvtij")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_4v2o3")
+theme_override_styles/focus = SubResource("StyleBoxTexture_r28ld")
+
+[node name="ColorRect" type="ColorRect" parent="HintPanel/HintInfoPanel/HintInfoBackButton"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 61.0
+offset_bottom = 21.0
+mouse_filter = 2
+color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+
+[node name="Label" type="Label" parent="HintPanel/HintInfoPanel/HintInfoBackButton/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "OPTION_BACK"
+label_settings = SubResource("LabelSettings_2gtjk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="HintPanel/HintInfoPanel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.5844
+offset_top = -29.156
+offset_right = -4.58441
+offset_bottom = -0.156006
+grow_horizontal = 0
+grow_vertical = 0
+text = "Z , : ↑
+X / : ↓"
+label_settings = SubResource("LabelSettings_y81fe")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HintBlankContainerInfo" type="HBoxContainer" parent="HintPanel/HintInfoPanel" node_paths=PackedStringArray("patial_label")]
+layout_mode = 1
+offset_left = 6.0
+offset_top = 3.4091334
+offset_right = 269.0
+offset_bottom = 37.409134
+theme_override_constants/separation = -2
+alignment = 2
+script = ExtResource("29_8khu0")
+patial_label = NodePath("../PartialLabel")
+
+[node name="HintBlankGuide" type="TextureRect" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo"]
+self_modulate = Color(1, 1, 1, 0.580392)
+custom_minimum_size = Vector2(34, 0)
+layout_mode = 2
+texture = ExtResource("31_v4i7l")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide"]
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.272736
+offset_top = -3.409048
+offset_right = 10.454559
+offset_bottom = 14.77277
+grow_horizontal = 2
+grow_vertical = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_8khu0")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="QMarkLabel" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.272736
+offset_top = -5.681775
+offset_right = 10.454559
+offset_bottom = 12.500042
+grow_horizontal = 2
+grow_vertical = 2
+text = "???"
+label_settings = SubResource("LabelSettings_kxscr")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="NumLabel" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide"]
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.27272
+offset_top = -14.727274
+offset_right = -3.181778
+offset_bottom = -5.636364
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+label_settings = SubResource("LabelSettings_gxsiu")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HintBlankGuide2" type="TextureRect" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo"]
+self_modulate = Color(1, 1, 1, 0.580392)
+custom_minimum_size = Vector2(34, 0)
+layout_mode = 2
+texture = ExtResource("31_v4i7l")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide2"]
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.272736
+offset_top = -3.409048
+offset_right = 10.454559
+offset_bottom = 14.77277
+grow_horizontal = 2
+grow_vertical = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_8khu0")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="QMarkLabel" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide2"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.272736
+offset_top = -5.681775
+offset_right = 10.454559
+offset_bottom = 12.500042
+grow_horizontal = 2
+grow_vertical = 2
+text = "???"
+label_settings = SubResource("LabelSettings_kxscr")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="NumLabel" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide2"]
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.27272
+offset_top = -14.727274
+offset_right = -3.181778
+offset_bottom = -5.636364
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+label_settings = SubResource("LabelSettings_gxsiu")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HintBlankGuide3" type="TextureRect" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo"]
+self_modulate = Color(1, 1, 1, 0.580392)
+custom_minimum_size = Vector2(34, 0)
+layout_mode = 2
+texture = ExtResource("31_v4i7l")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide3"]
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.272736
+offset_top = -3.409048
+offset_right = 10.454559
+offset_bottom = 14.77277
+grow_horizontal = 2
+grow_vertical = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_8khu0")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="QMarkLabel" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide3"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.272736
+offset_top = -5.681775
+offset_right = 10.454559
+offset_bottom = 12.500042
+grow_horizontal = 2
+grow_vertical = 2
+text = "???"
+label_settings = SubResource("LabelSettings_kxscr")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="NumLabel" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide3"]
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.27272
+offset_top = -14.727274
+offset_right = -3.181778
+offset_bottom = -5.636364
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+label_settings = SubResource("LabelSettings_gxsiu")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HintBlankGuide4" type="TextureRect" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo"]
+self_modulate = Color(1, 1, 1, 0.580392)
+custom_minimum_size = Vector2(34, 0)
+layout_mode = 2
+texture = ExtResource("31_v4i7l")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide4"]
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.272736
+offset_top = -3.409048
+offset_right = 10.454559
+offset_bottom = 14.77277
+grow_horizontal = 2
+grow_vertical = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_8khu0")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="QMarkLabel" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide4"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.272736
+offset_top = -5.681775
+offset_right = 10.454559
+offset_bottom = 12.500042
+grow_horizontal = 2
+grow_vertical = 2
+text = "???"
+label_settings = SubResource("LabelSettings_kxscr")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="NumLabel" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide4"]
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.27272
+offset_top = -14.727274
+offset_right = -3.181778
+offset_bottom = -5.636364
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+label_settings = SubResource("LabelSettings_gxsiu")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HintBlankGuide5" type="TextureRect" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo"]
+self_modulate = Color(1, 1, 1, 0.580392)
+custom_minimum_size = Vector2(34, 0)
+layout_mode = 2
+texture = ExtResource("31_v4i7l")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide5"]
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.272736
+offset_top = -3.409048
+offset_right = 10.454559
+offset_bottom = 14.77277
+grow_horizontal = 2
+grow_vertical = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_8khu0")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="QMarkLabel" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide5"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.272736
+offset_top = -5.681775
+offset_right = 10.454559
+offset_bottom = 12.500042
+grow_horizontal = 2
+grow_vertical = 2
+text = "???"
+label_settings = SubResource("LabelSettings_kxscr")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="NumLabel" type="Label" parent="HintPanel/HintInfoPanel/HintBlankContainerInfo/HintBlankGuide5"]
+self_modulate = Color(1, 1, 1, 0.756863)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.27272
+offset_top = -14.727274
+offset_right = -3.181778
+offset_bottom = -5.636364
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+label_settings = SubResource("LabelSettings_gxsiu")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PartialLabel" type="Label" parent="HintPanel/HintInfoPanel"]
+layout_mode = 0
+offset_left = -39.40908
+offset_top = 12.50004
+offset_right = 103.318214
+offset_bottom = 30.68186
+text = "HINT_PARTIAL_NEEDED"
+label_settings = SubResource("LabelSettings_2nlap")
+horizontal_alignment = 2
+
+[node name="RouteMapTutorial" type="Control" parent="."]
+anchors_preset = 0
+script = ExtResource("3_i7lny")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="RouteMapTutorial"]
+layer = 5
+
+[node name="TutorialRect" parent="RouteMapTutorial/CanvasLayer" node_paths=PackedStringArray("rect") instance=ExtResource("4_75v6w")]
+unique_name_in_owner = true
+visible = false
+rect = [NodePath("NaviFull"), NodePath("RouteList"), NodePath("RouteSet"), NodePath("TutoExit"), NodePath("TutoDestination"), NodePath("TutoHintPanel")]
+
+[node name="NaviFull" type="ColorRect" parent="RouteMapTutorial/CanvasLayer/TutorialRect"]
+visible = false
+offset_left = 97.0
+offset_top = 19.0
+offset_right = 567.0
+offset_bottom = 243.0
+color = Color(1, 1, 1, 0.141176)
+
+[node name="RouteList" type="ColorRect" parent="RouteMapTutorial/CanvasLayer/TutorialRect"]
+visible = false
+offset_left = 278.0
+offset_top = 47.0
+offset_right = 553.0
+offset_bottom = 186.0
+color = Color(1, 1, 1, 0.141176)
+
+[node name="RouteSet" type="ColorRect" parent="RouteMapTutorial/CanvasLayer/TutorialRect"]
+visible = false
+offset_left = 490.0
+offset_top = 207.0
+offset_right = 567.0
+offset_bottom = 240.0
+color = Color(1, 1, 1, 0.141176)
+
+[node name="TutoExit" type="ColorRect" parent="RouteMapTutorial/CanvasLayer/TutorialRect"]
+visible = false
+offset_left = 522.0
+offset_top = 17.0
+offset_right = 563.0
+offset_bottom = 36.0
+color = Color(1, 1, 1, 0.141176)
+
+[node name="TutoDestination" type="ColorRect" parent="RouteMapTutorial/CanvasLayer/TutorialRect"]
+visible = false
+offset_left = 100.0
+offset_top = 192.0
+offset_right = 457.0
+offset_bottom = 242.0
+color = Color(1, 1, 1, 0.141176)
+
+[node name="TutoHintPanel" type="ColorRect" parent="RouteMapTutorial/CanvasLayer/TutorialRect"]
+visible = false
+offset_left = 479.0
+offset_top = 19.0
+offset_right = 519.0
+offset_bottom = 37.0
+color = Color(1, 1, 1, 0.141176)
+
+[node name="ButlerMarker" type="Marker2D" parent="RouteMapTutorial"]
+position = Vector2(404, 223)
+
+[node name="ReinaMarker" type="Marker2D" parent="RouteMapTutorial"]
+position = Vector2(471, 241)
+
+[node name="MaiMarker" type="Marker2D" parent="RouteMapTutorial"]
+position = Vector2(60, 221)
+
+[node name="ConfirmBox" parent="." instance=ExtResource("48_u7nh5")]
+
+[node name="PinHintPanel" type="ColorRect" parent="." node_paths=PackedStringArray("hint_panel", "scroll")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -105.0
+offset_right = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.490196)
+script = ExtResource("50_ym1eo")
+hint_panel = NodePath("../HintPanel/HintInfoPanel")
+scroll = NodePath("ScrollContainer")
+
+[node name="HintInfoTexture" type="TextureRect" parent="PinHintPanel"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.187
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 12.5
+offset_right = 17.28
+offset_bottom = -12.5
+grow_vertical = 2
+texture = ExtResource("51_m2rot")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PinHintPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 157.0
+offset_top = 4.0
+offset_right = -24.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical_scroll_mode = 2
+
+[node name="HintInfoLabel" type="RichTextLabel" parent="PinHintPanel/ScrollContainer"]
+custom_minimum_size = Vector2(370, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+fit_content = true
+
+[node name="Label" type="Label" parent="PinHintPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -77.5
+offset_right = -14.0
+offset_bottom = -48.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Z . : ↑
+X / : ↓"
+label_settings = SubResource("LabelSettings_y81fe")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="FontChangeComponent" parent="." node_paths=PackedStringArray("target_node") instance=ExtResource("54_y81fe")]
+target_node = NodePath("..")
+
+[connection signal="pressed" from="KanKanNavi/BaseRect/KanKanScreen/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="KanKanNavi/BaseRect/KanKanScreen/Hint" to="." method="_on_hint_pressed"]
+[connection signal="pressed" from="KanKanNavi/BaseRect/KanKanScreen/RouteClearButton" to="." method="_on_route_clear_button_pressed"]
+[connection signal="pressed" from="KanKanNavi/BaseRect/KanKanScreen/RouteStart" to="." method="_on_route_start_pressed"]
+[connection signal="pressed" from="HintPanel/Exit" to="HintPanel" method="_on_exit_pressed"]
+[connection signal="pressed" from="HintPanel/HintInfoPanel/HintInfoPinButton" to="HintPanel/HintInfoPanel" method="_on_hint_info_pin_button_pressed"]
+[connection signal="pressed" from="HintPanel/HintInfoPanel/HintInfoBackButton" to="HintPanel/HintInfoPanel" method="_on_hint_info_back_button_pressed"]

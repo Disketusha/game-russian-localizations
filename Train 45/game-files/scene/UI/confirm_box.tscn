@@ -1,0 +1,267 @@
+[gd_scene load_steps=9 format=3 uid="uid://rye76hy4dovq"]
+
+[ext_resource type="Script" uid="uid://c1wt0sa3fafyy" path="res://ConfirmBox.gd" id="1_5w14y"]
+[ext_resource type="Texture2D" uid="uid://beydiwp0imk2g" path="res://resources/ui/confirm/confirm_back.png" id="2_035ky"]
+[ext_resource type="Theme" uid="uid://buqdy7hqn0oxw" path="res://resources/ui/confirm/confirm_theme.tres" id="3_08wxl"]
+[ext_resource type="PackedScene" uid="uid://c7tthty2e1w31" path="res://Gameplay/Ui/auto_shirink_component.tscn" id="5_ymn7d"]
+
+[sub_resource type="Animation" id="Animation_o5a76"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(187, 388)]
+}
+
+[sub_resource type="Animation" id="Animation_jgtmj"]
+resource_name = "in"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.366021, 1),
+"update": 0,
+"values": [Vector2(187, 388), Vector2(187, 72)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vlmhs"]
+_data = {
+&"RESET": SubResource("Animation_o5a76"),
+&"in": SubResource("Animation_jgtmj")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dbyq5"]
+
+[node name="ConfirmBox" type="CanvasLayer"]
+process_mode = 3
+layer = 20
+script = ExtResource("1_5w14y")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.243137)
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = 208.0
+offset_right = 133.0
+offset_bottom = 392.00006
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(133, 92)
+size_flags_horizontal = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel"]
+libraries = {
+&"": SubResource("AnimationLibrary_vlmhs")
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panel"]
+layout_mode = 0
+offset_left = -35.0
+offset_right = 2071.0
+offset_bottom = 1163.0
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("2_035ky")
+patch_margin_left = 371
+patch_margin_top = 238
+patch_margin_right = 380
+patch_margin_bottom = 104
+
+[node name="SubMessageLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -39.0
+offset_top = 152.0
+offset_right = 39.0
+offset_bottom = 173.0
+grow_horizontal = 2
+pivot_offset = Vector2(39, 0)
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("3_08wxl")
+theme_override_font_sizes/font_size = 17
+text = "You Sure"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AutoShirinkComponent" parent="Panel/SubMessageLabel" instance=ExtResource("5_ymn7d")]
+max_font_size = 17
+min_font_size = 9
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+anchor_left = -0.094
+anchor_top = 0.12
+anchor_right = 1.094
+anchor_bottom = 0.821
+offset_left = 0.00400162
+offset_top = 4.92
+offset_right = -1.004
+offset_bottom = -29.064
+theme_override_constants/separation = -8
+
+[node name="HeaderLabel" type="Label" parent="Panel/VBoxContainer"]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "게임 종료"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="AutoShirinkComponent" parent="Panel/VBoxContainer/HeaderLabel" instance=ExtResource("5_ymn7d")]
+max_font_size = 51
+min_font_size = 30
+fixed_ref_width = 315.0
+
+[node name="MessageLabel" type="Label" parent="Panel/VBoxContainer"]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(293, 18)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "コインを使用して路線をアンロックしますか？"
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 1
+
+[node name="ConfirmButton" type="Button" parent="Panel"]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(70, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = 21.0
+offset_right = -59.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.742583, 0.742583, 0.742583, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dbyq5")
+text = "はい"
+
+[node name="SubMessageLabel2" type="Label" parent="Panel/ConfirmButton"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -2.0
+offset_right = 36.0
+offset_bottom = 17.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("3_08wxl")
+theme_override_font_sizes/font_size = 14
+text = "Yes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CancelButton" type="Button" parent="Panel"]
+unique_name_in_owner = true
+texture_filter = 2
+custom_minimum_size = Vector2(70, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 57.0
+offset_top = 21.0
+offset_right = 127.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.742583, 0.742583, 0.742583, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_dbyq5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dbyq5")
+text = "はい"
+
+[node name="SubMessageLabel3" type="Label" parent="Panel/CancelButton"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.529
+anchor_top = 1.0
+anchor_right = 0.529
+anchor_bottom = 1.0
+offset_left = -36.03
+offset_top = -1.0
+offset_right = 35.97
+offset_bottom = 18.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("3_08wxl")
+theme_override_font_sizes/font_size = 14
+text = "No"
+horizontal_alignment = 1
+vertical_alignment = 1
