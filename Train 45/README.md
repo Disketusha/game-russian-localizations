@@ -1,4 +1,6 @@
-![Train 45 в Steam](./steam-header.png)
+[**Train 45 в Steam**](https://store.steampowered.com/app/3711590/Train_45/)
+
+[![Train 45 в Steam](./steam-header.png)](https://store.steampowered.com/app/3711590/Train_45/)
 
 # Русификатор Train 45
 
