@@ -1,0 +1,51 @@
+name: Предложить новую игру
+description: Предложите игру для будущего русификатора
+title: "[Предложение игры] "
+body:
+  - type: input
+    id: game-name
+    attributes:
+      label: Название игры
+      placeholder: Например, Train 45
+    validations:
+      required: true
+
+  - type: input
+    id: game-link
+    attributes:
+      label: Ссылка на игру
+      placeholder: https://store.steampowered.com/...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: existing-localization
+    attributes:
+      label: Есть ли уже русификатор?
+      options:
+        - Нет
+        - Да
+        - Не знаю
+    validations:
+      required: false
+
+  - type: dropdown
+    id: reason
+    attributes:
+      label: Причина
+      options:
+        - Нет русификатора
+        - Имеющийся русификатор низкого качества
+        - Имеющийся русификатор устарел или не работает
+        - Нужен более полный перевод
+        - Другое
+    validations:
+      required: false
+
+  - type: input
+    id: custom-reason
+    attributes:
+      label: Своя причина
+      placeholder: Заполните, если выбрали «Другое».
+    validations:
+      required: false
