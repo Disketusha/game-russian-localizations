@@ -1,0 +1,40 @@
+name: Сообщить об ошибке
+description: Сообщите о проблеме в русификаторе
+title: "[Ошибка] "
+body:
+  - type: dropdown
+    id: game
+    attributes:
+      label: Игра
+      options:
+        - Train 45
+    validations:
+      required: true
+
+  - type: dropdown
+    id: loader-version
+    attributes:
+      label: Версия загрузчика
+      options:
+        - "1.1.3"
+        - "1.1.2"
+        - "1.1.1"
+        - "1.1.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Описание
+      placeholder: Опишите, что произошло и как воспроизвести ошибку.
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Скриншот
+      description: При необходимости перетащите сюда изображение.
+    validations:
+      required: false
