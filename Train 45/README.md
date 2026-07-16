@@ -30,6 +30,28 @@
 
 Если игра или резервная копия были перемещены, деинсталлятор предложит указать нужный файл вручную. Можно продолжить без восстановления и затем вернуть оригинал через Steam.
 
+## Пример перевода
+
+<p align="center">
+  <img src="./screenshots/example-main-menu.png" alt="Главное меню на русском" width="49%">
+  <img src="./screenshots/example-dialogue.png" alt="Диалог на русском" width="49%">
+</p>
+
+<p align="center">
+  <img src="./screenshots/example-choice.png" alt="Выбор реплики на русском" width="49%">
+  <img src="./screenshots/example-pause-notes.png" alt="Меню паузы и заметки на русском" width="49%">
+</p>
+
+<p align="center">
+  <img src="./screenshots/example-exchange-shop.png" alt="Лавка обмена на русском" width="70%">
+</p>
+
+## Перевод анимации
+
+<p align="center">
+  <img src="./screenshots/translated-station-animation.gif" alt="Переведённая анимация названий станций">
+</p>
+
 ## FAQ
 
 ### Можно запускать игру из Steam?
