@@ -15,4 +15,4 @@ PDF-инструкции публикуются в разделе Releases.
 
 | Игра | Последний релиз | Поддерживаемая версия | Инструкция |
 | :---: | :---: | :---: | :---: |
-| [<img src="./Train%2045/steam-header.png" alt="Train 45" width="240">](https://store.steampowered.com/app/3711590/Train_45/)<br>[**Train 45**](https://store.steampowered.com/app/3711590/Train_45/) | [Последняя версия русификатора](https://github.com/Disketusha/game-russian-localizations/releases/tag/train45-latest) | Steam 1.0.5.1 | [README](./Train%2045/README.md) |
+| [<img src="./Train%2045/steam-header.png" alt="Train 45" width="240">](https://store.steampowered.com/app/3711590/Train_45/)<br>[**Train 45**](https://store.steampowered.com/app/3711590/Train_45/) | [GitHub — установщик 1.1.8 (до 20 МБ)](https://github.com/Disketusha/game-russian-localizations/releases/tag/train45-latest)<br>[Google Drive — готовый EXE 1.1.8 (1,66 ГБ)](https://drive.google.com/file/d/1mB7v9zmJi5G_UD5goMQVpIHeWEdtabJJ/view?usp=sharing) | Steam 1.0.5.1 | [README](./Train%2045/README.md) |
