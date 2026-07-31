@@ -1,25 +1,13 @@
-name: Сообщить об ошибке
-description: Сообщите о проблеме в русификаторе
-title: "[Ошибка] "
-# При выпуске новой версии обновите этот список в том же коммите.
-# Для другой игры создайте отдельный шаблон со своим списком версий.
+name: Сообщить об ошибке в Salvor DEEP
+description: Сообщите о проблеме в русификаторе Salvor DEEP
+title: "[Salvor DEEP] "
 body:
-  - type: dropdown
-    id: game
-    attributes:
-      label: Игра
-      options:
-        - Train 45
-    validations:
-      required: true
-
   - type: dropdown
     id: loader-version
     attributes:
       label: Версия русификатора
       options:
-        - "1.1.8"
-        - "1.1.7"
+        - "1.0.12"
     validations:
       required: true
 

@@ -6,7 +6,8 @@ PDF-инструкции публикуются в разделе Releases.
 
 ## Обратная связь
 
-- [Сообщить об ошибке](https://github.com/Disketusha/game-russian-localizations/issues/new?template=bug-report.yml)
+- [Сообщить об ошибке в Train 45](https://github.com/Disketusha/game-russian-localizations/issues/new?template=bug-report.yml)
+- [Сообщить об ошибке в Salvor DEEP](https://github.com/Disketusha/game-russian-localizations/issues/new?template=salvor-deep-bug-report.yml)
 - [Предложить новую игру](https://github.com/Disketusha/game-russian-localizations/issues/new?template=game-request.yml)
 
 ## Игры
@@ -16,3 +17,4 @@ PDF-инструкции публикуются в разделе Releases.
 | Игра | Последний релиз | Поддерживаемая версия | Инструкция |
 | :---: | :---: | :---: | :---: |
 | [<img src="./Train%2045/steam-header.png" alt="Train 45" width="240">](https://store.steampowered.com/app/3711590/Train_45/)<br>[**Train 45**](https://store.steampowered.com/app/3711590/Train_45/) | [GitHub — установщик 1.1.8 (до 20 МБ)](https://github.com/Disketusha/game-russian-localizations/releases/tag/train45-latest)<br>[Google Drive — готовый EXE 1.1.8 (1,66 ГБ)](https://drive.google.com/file/d/1mB7v9zmJi5G_UD5goMQVpIHeWEdtabJJ/view?usp=sharing) | Steam 1.0.5.1 | [README](./Train%2045/README.md) |
+| [<img src="./Salvor%20DEEP/steam-header.png" alt="Salvor DEEP" width="240">](https://store.steampowered.com/app/3004470/Salvor_DEEP/)<br>[**Salvor DEEP**](https://store.steampowered.com/app/3004470/Salvor_DEEP/) | [GitHub — установщик 1.0.12 (до 10 МБ)](https://github.com/Disketusha/game-russian-localizations/releases/tag/salvor-deep-latest)<br>[Google Drive — ручная установка 1.0.12 (3,30 МБ)](https://drive.google.com/file/d/1Mm82k6nZPjYnYRO0F78n3YNRNXNGFCK0/view?usp=sharing) | v1.00.4 (Steam build 19211688) | [README](./Salvor%20DEEP/README.md) |
