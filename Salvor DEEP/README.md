@@ -49,13 +49,23 @@ SHA-256 ручного архива: `2622c6d5931fe17b5caec899279c73afc5e433305c
 ## Пример перевода
 
 <p align="center">
-  <img src="./screenshots/shop-and-dialogue.png" alt="Магазин и диалог на русском" width="49%">
-  <img src="./screenshots/gallery-and-dispatch.png" alt="Галерея и задания на русском" width="49%">
+  <strong>Магазин и диалог</strong><br>
+  <img src="./screenshots/shop-and-dialogue.png" alt="Магазин и диалог на русском" width="100%">
 </p>
 
 <p align="center">
-  <img src="./screenshots/dialogue.png" alt="Диалог на русском" width="32%">
-  <img src="./screenshots/settings-and-map.png" alt="Настройки и карта на русском" width="65%">
+  <strong>Галерея и задания</strong><br>
+  <img src="./screenshots/gallery-and-dispatch.png" alt="Галерея и задания на русском" width="100%">
+</p>
+
+<p align="center">
+  <strong>Карта и настройки</strong><br>
+  <img src="./screenshots/settings-and-map.png" alt="Настройки и карта на русском" width="100%">
+</p>
+
+<p align="center">
+  <strong>Диалог</strong><br>
+  <img src="./screenshots/dialogue.png" alt="Диалог на русском" width="384">
 </p>
 
 ## FAQ

@@ -12,7 +12,7 @@ PDF-инструкции публикуются в разделе Releases.
 
 ## Игры
 
-[**Google Таблицы: локализации, планы и известные проблемы**](https://docs.google.com/spreadsheets/d/e/2PACX-1vRwzKAADIv8gSJLL4bVL057Mrq6e5-Z2PZIyvTR9isKtF5AGIfHJzdOa2MqVnTlPLHEwhJma8rohWDS/pubhtml)
+[**Google Таблицы: локализации, планы и известные проблемы**](https://docs.google.com/spreadsheets/d/10MfNQ8lPfLam0Fgd2OhE_IXeusBGSDZMQFrHEIYrenI/edit?usp=sharing)
 
 | Игра | Последний релиз | Поддерживаемая версия | Инструкция |
 | :---: | :---: | :---: | :---: |
