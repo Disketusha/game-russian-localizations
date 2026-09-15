@@ -8,8 +8,7 @@
 Поддерживаемая версия игры: **v1.00.4, Steam build 19211688**<br>
 Автор: **Disketa**
 
-- [Скачать установщик и PDF-инструкцию на GitHub](https://github.com/Disketusha/game-russian-localizations/releases/tag/salvor-deep-latest)
-- [Скачать архив для ручной установки с Google Drive](https://drive.google.com/file/d/1Mm82k6nZPjYnYRO0F78n3YNRNXNGFCK0/view?usp=sharing)
+- [Скачать установщик, архив для ручной установки и PDF-инструкцию на GitHub](https://github.com/Disketusha/game-russian-localizations/releases/tag/salvor-deep-latest)
 
 ## Установка через установщик
 
