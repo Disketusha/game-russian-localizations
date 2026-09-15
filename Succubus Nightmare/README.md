@@ -5,7 +5,7 @@
 # Русификатор Succubus Nightmare
 
 Версия русификатора: **1.0.1**<br>
-Поддерживаемая версия игры: **Steam build 25321671**<br>
+Поддерживаемая версия игры: **V1.0.9**<br>
 Автор: **Disketa**
 
 - [Скачать установщик, архив для ручной установки и PDF-инструкцию на GitHub](https://github.com/Disketusha/game-russian-localizations/releases/tag/succubus-nightmare-latest)
